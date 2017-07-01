@@ -14,3 +14,4 @@ let g:jsx_ext_required = 0
 set wildchar=<Tab> wildmenu wildmode=full
 let vim_markdown_preview_github=1
 set clipboard^=unnamed
+:imap jj <ESC>
