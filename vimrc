@@ -63,3 +63,8 @@ exec "normal! \<c-w>\<c-w>"
 :vnoremap <Leader>" <ESC>`<i"<ESC>`>a"
 "Don't use ESC!
 :inoremap <ESC> <nop>
+"Easier window management
+:noremap <C-h> <C-w><c-h>
+:noremap <C-j> <C-w><c-j>
+:noremap <C-k> <C-w><c-k>
+:noremap <C-l> <C-w><c-l>
