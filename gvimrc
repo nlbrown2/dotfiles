@@ -1,3 +1,4 @@
+:echom ">^.^<"
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set tabstop=2
@@ -36,13 +37,13 @@ call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#000040')
 call NERDTreeHighlightFile('js', 'Red', 'none', 'yellow', '#000040')
 call NERDTreeHighlightFile('jsx', 'Red', 'none', 'yellow', '#000040')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#000040')
-call NERDTREEHighlightFile('Python', 'blue', 'none', '#3366FF', '#000040')
+call NERDTreeHighlightFile('Python', 'blue', 'none', '#3366FF', '#000040')
 call NERDTreeHighlightFile('sh', 'yellow', 'NONE', 'red', '#000040')
 call NERDTreeHighlightFile('py', 'Red', 'none', '#ffa500', '#000040')
 call NERDTreeHighlightFile('pyc', 'Red', 'none', '#ffa500', '#000040')
 call NERDTreeHighlightFile('txt', 'Red', 'none', '#fc16ca', '#000040')
 call NERDTreeHighlightFile('babelrc', 'Red', 'none', 'red', '#000040')
 call NERDTreeHighlightFile('lock', 'Red', 'none', 'red', '#000040')
-cd Documents/LightProject/RPi-Lights-Server
+cd ~/Documents/LightProject/RPi-Lights-Server
 NERDTree
 
