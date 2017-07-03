@@ -8,7 +8,7 @@ filetype off
 syntax on
 set number
 filetype plugin indent on
-colorscheme darkblue
+colorscheme desert
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
 set wildchar=<Tab> wildmenu wildmode=full
@@ -55,7 +55,7 @@ exec "normal! \<c-w>\<c-w>"
 :nnoremap <Leader>_ ojjk
 :nnoremap <Leader>ev :vsplit $MYVIMRC<cr>
 :nnoremap <leader>sv :source $MYVIMRC<cr>
-"Double {{ will open braces for a function 
+"Double {{ will open braces for a function
 :inoremap {{ {<ESC>o}<ESC>O
 "wrap the current word in quotes
 :inoremap <Leader>" <ESC>viwa"<ESC>bi"<ESC>lel
