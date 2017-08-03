@@ -8,11 +8,6 @@ VIRTUAL_ENV_DISABLE_PROMPT=1 source /Users/nlbrown222/Library/Enthought/Canopy_3
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 export PATH
 
-# Setting PATH for Python 2.7
-# The orginal version is saved in .profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-export PATH
-
 #Told to add these for react native with Android stuido
 export ANDROID_HOME=${HOME}/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
