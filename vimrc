@@ -1,3 +1,24 @@
+" LIST OF PLUGINS:
+" YouCompleteMe
+" ack.vim
+" ctrlp
+" nerdtree
+" nerdtree-git-plugin
+" tern_for_vim
+" tmuxline.vim
+" undotree
+" vim-airline
+" vim-better-whitespace
+" vim-colors-solarized
+" vim-commentary
+" vim-fugitive
+" vim-jsx
+" vim-markdown-preview
+" vim-multiple-cursors
+" vim-on-write
+" vim-qargs
+" vim-signature
+" vim-tmux
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set expandtab
@@ -87,7 +108,10 @@ function! SearchAndReplace(from, to)
   exec 'Ack ' Strip(a:from)
   exec 'Qdo %s/'.Strip(a:from).'/'.Strip(a:to).'/gc'
 endfunction
-:command -nargs=* SearchAndReplace call SearchAndReplace(<f-args>)
+if !exists("g:SearchAndReplace")
+  :command -nargs=* SearchAndReplace call SearchAndReplace(<f-args>)
+  let g:SearchAndReplace=1
+endif
 "Remove files in .gitignore from CtrlP
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 let g:ctrlp_map = '<c-f>'
