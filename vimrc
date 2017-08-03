@@ -107,3 +107,11 @@ let g:tmuxline_preset = {
       \'x'    : '%a',
       \'y'    : '#W %R',
       \'z'    : ''}
+
+"For persistent undo
+if has("persistent_undo")
+    set undodir=~/.undodir/
+    set undofile
+endif
+
+:noremap U :UndotreeShow<cr>
