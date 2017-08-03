@@ -15,6 +15,7 @@ let vim_markdown_preview_github=1
 let vim_markdown_preview_toggle=2
 let vim_markdown_preview_browser='Google Chrome'
 let NERDTreeShowHidden=1
+cd ~/Documents/IMS\ code/IMS-Mobile-Investor/src
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -46,4 +47,3 @@ call NERDTreeHighlightFile('lock', 'Red', 'none', 'red', '#000040')
 cd ~/Documents/LightProject/RPi-Lights-Server
 NERDTree
 
-:messages
