@@ -1,4 +1,4 @@
-" LIST OF PLUGINS:
+" list of plugins
 " YouCompleteMe
 " ack.vim
 " ctrlp
