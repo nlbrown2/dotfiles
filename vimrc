@@ -7,7 +7,6 @@
 " tern_for_vim
 " tmuxline.vim
 " undotree
-" vim-airline
 " vim-better-whitespace
 " vim-colors-solarized
 " vim-commentary
@@ -18,7 +17,6 @@
 " vim-on-write
 " vim-qargs
 " vim-signature
-" vim-tmux
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set expandtab
@@ -37,6 +35,13 @@ let g:jsx_ext_required = 0
 set wildchar=<Tab> wildmenu wildmode=full
 let vim_markdown_preview_github=1
 set clipboard^=unnamed
+
+" for powerline
+source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
+set laststatus=2
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -92,11 +97,7 @@ call pathogen#helptags()
 :inoremap <Tab> <C-n>
 :noremap gm `
 :vnoremap <Space> <ESC>
-"Status line is filename left, modifiled flag, column number right
-:set statusline=%f
-:set statusline +=%2*%m%*
-:set statusline+=%=
-:set statusline+=%c
+
 "Ack highlight search term in quickfix window
 let g:ackhighlight=1
 "Funciton to strip whitespace from a string, useful for arguments
@@ -121,17 +122,6 @@ let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='j'
-let g:tmuxline_powerline_separators = 0
-let g:tmuxline_preset = {
-      \'a'    : '#S',
-      \'b'    : '',
-      \'c'    : '',
-      \'win'  : '#I #W',
-      \'cwin' : '#I #W',
-      \'x'    : '%a',
-      \'y'    : '#W %R',
-      \'z'    : ''}
-
 "For persistent undo
 if has("persistent_undo")
     set undodir=~/.undodir/
