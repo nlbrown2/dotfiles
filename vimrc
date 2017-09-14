@@ -97,6 +97,12 @@ call pathogen#helptags()
 :inoremap <Tab> <C-n>
 :noremap gm `
 :vnoremap <Space> <ESC>
+"
+" Set column width and color
+set colorcolumn=80
+highlight ColorColum ctermbg=blue
+
+
 
 "Ack highlight search term in quickfix window
 let g:ackhighlight=1
