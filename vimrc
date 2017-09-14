@@ -37,39 +37,37 @@ let vim_markdown_preview_github=1
 set clipboard^=unnamed
 
 " for powerline
-source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
-set laststatus=2
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+"source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
+"set laststatus=2
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
- exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
- exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+ exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+ exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 
-call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#000040')
-call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#000040')
-call NERDTreeHighlightFile('md', 'green', 'none', '#3366FF', '#000040')
-call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#000040')
-call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#000040')
-call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#000040')
-call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#000040')
-call NERDTreeHighlightFile('html', 'yellow', 'none', '#73dd27', '#000040')
-call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#000040')
-call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#000040')
-call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#000040')
-call NERDTreeHighlightFile('js', 'Red', 'none', 'yellow', '#000040')
-call NERDTreeHighlightFile('jsx', 'Red', 'none', 'yellow', '#000040')
-call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#000040')
+call NERDTreeHighlightFile('Md', 'green', 'none', '#3366FF', '#000040')
+call NERDTreeHighlightFile('Yml', 'yellow', 'none', 'yellow', '#000040')
+call NERDTreeHighlightFile('Config', 'yellow', 'none', 'yellow', '#000040')
+call NERDTreeHighlightFile('Conf', 'yellow', 'none', 'yellow', '#000040')
+call NERDTreeHighlightFile('Json', 'yellow', 'none', 'yellow', '#000040')
+call NERDTreeHighlightFile('Html', 'yellow', 'none', '#73dd27', '#000040')
+call NERDTreeHighlightFile('Styl', 'cyan', 'none', 'cyan', '#000040')
+call NERDTreeHighlightFile('Css', 'cyan', 'none', 'cyan', '#000040')
+call NERDTreeHighlightFile('Coffee', 'Red', 'none', 'red', '#000040')
+call NERDTreeHighlightFile('Js', 'Red', 'none', 'yellow', '#000040')
+call NERDTreeHighlightFile('Jsx', 'Red', 'none', 'yellow', '#000040')
+call NERDTreeHighlightFile('Php', 'Magenta', 'none', '#ff00ff', '#000040')
 call NERDTreeHighlightFile('Python', 'blue', 'none', '#3366FF', '#000040')
-call NERDTreeHighlightFile('sh', 'yellow', 'NONE', 'red', '#000040')
-call NERDTreeHighlightFile('py', 'blue', 'none', '#ffa500', '#000040')
-call NERDTreeHighlightFile('pyc', 'blue', 'none', '#ffa500', '#000040')
-call NERDTreeHighlightFile('txt', 'Red', 'none', '#fc16ca', '#000040')
-call NERDTreeHighlightFile('babelrc', 'Red', 'none', 'red', '#000040')
-call NERDTreeHighlightFile('lock', 'Red', 'none', 'red', '#000040')
+call NERDTreeHighlightFile('Sh', 'yellow', 'NONE', 'red', '#000040')
+call NERDTreeHighlightFile('Py', 'blue', 'none', '#ffa500', '#000040')
+call NERDTreeHighlightFile('Pyc', 'blue', 'none', '#ffa500', '#000040')
+call NERDTreeHighlightFile('Txt', 'Red', 'none', '#fc16ca', '#000040')
+call NERDTreeHighlightFile('Babelrc', 'Red', 'none', 'red', '#000040')
+call NERDTreeHighlightFile('Lock', 'Red', 'none', 'red', '#000040')
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 :let mapleader = "\\"
@@ -134,4 +132,4 @@ if has("persistent_undo")
     set undofile
 endif
 
-:noremap U :UndotreeShow<cr>
+:nnoremap U :UndotreeShow<cr>
