@@ -27,9 +27,9 @@ filetype off
 syntax on
 set number
 filetype plugin indent on
-set background=dark
+set background=light
 let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme 256-grayvim
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
 set wildchar=<Tab> wildmenu wildmode=full
@@ -50,6 +50,7 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
 endfunction
 
 call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#000040')
+call NERDTreeHighlightFile('h', 'green', 'none', 'green', '#000040')
 call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#000040')
 call NERDTreeHighlightFile('md', 'green', 'none', '#3366FF', '#000040')
 call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#000040')
@@ -70,20 +71,21 @@ call NERDTreeHighlightFile('pyc', 'blue', 'none', '#ffa500', '#000040')
 call NERDTreeHighlightFile('txt', 'Red', 'none', '#fc16ca', '#000040')
 call NERDTreeHighlightFile('babelrc', 'Red', 'none', 'red', '#000040')
 call NERDTreeHighlightFile('lock', 'Red', 'none', 'red', '#000040')
+call NERDTreeHighlightFile('cpp', 'lightblue', 'none', 'blue', '#000040')
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 :let mapleader = "\\"
 :inoremap jj <ESC>
 "put an empty line above this one
-:nnoremap <Leader>- Ojjj
+:nnoremap <Leader>- O<ESC>j
 "put an empty line below this one
-:nnoremap <Leader>_ ojjk
+:nnoremap <Leader>_ o<ESC>k
 :nnoremap <Leader>ev :vsplit $MYVIMRC<cr>
 :nnoremap <leader>sv :source $MYVIMRC<cr>
 "Double {{ will open braces for a function
 :inoremap {{ {<ESC>o}<ESC>O
 "wrap the current word in quotes
-:inoremap <Leader>" <ESC>viwa"<ESC>bi"<ESC>lel
+:noremap <Leader>" <ESC>viw<ESC>a"<ESC>bi"<ESC>lel
 "wrap the selection in quotes
 :vnoremap <Leader>" <ESC>`<i"<ESC>`>la"
 "Don't use ESC!
@@ -100,9 +102,7 @@ call pathogen#helptags()
 "
 " Set column width and color
 set colorcolumn=80
-highlight ColorColum ctermbg=blue
-
-
+highlight ColorColum ctermbg=black
 
 "Ack highlight search term in quickfix window
 let g:ackhighlight=1
@@ -134,4 +134,5 @@ if has("persistent_undo")
     set undofile
 endif
 
-:noremap U :UndotreeShow<cr>
+set modifiable
+let g:ycm_autoclose_preview_window_after_completion = 1
