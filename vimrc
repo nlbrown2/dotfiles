@@ -20,8 +20,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set expandtab
-set tabstop=2
-set shiftwidth=2
+set tabstop=3
+set shiftwidth=3
 execute pathogen#infect()
 filetype off
 syntax on
@@ -136,3 +136,11 @@ endif
 
 set modifiable
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+function! LatexGenPreview()
+  let filename = expand('%:t')
+  echo filename
+  :silent execute "!pdflatex " shellescape(filename) | execute ":redraw!"
+endfunction
+
+:command! L call LatexGenPreview()
