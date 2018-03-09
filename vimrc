@@ -29,7 +29,7 @@ set number
 filetype plugin indent on
 set background=light
 let g:solarized_termcolors=256
-colorscheme 256-grayvim
+colorscheme cobalt2
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
 set wildchar=<Tab> wildmenu wildmode=full
@@ -39,9 +39,9 @@ set clipboard^=unnamed
 " for powerline
 source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
 set laststatus=2
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
