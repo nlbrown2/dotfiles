@@ -83,7 +83,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 :nnoremap <Leader>ev :vsplit $MYVIMRC<cr>
 :nnoremap <leader>sv :source $MYVIMRC<cr>
 "Double {{ will open braces for a function
-:inoremap {{ {<ESC>o}<ESC>O
+:inoremap {{ {<ESC>o}<ESC><C-v>kI<TAB><ESC>o<backspace><backspace><backspace>
 "wrap the current word in quotes
 :noremap <Leader>" <ESC>viw<ESC>a"<ESC>bi"<ESC>lel
 "wrap the selection in quotes
@@ -99,6 +99,7 @@ call pathogen#helptags()
 :inoremap <Tab> <C-n>
 :noremap gm `
 :vnoremap <Space> <ESC>
+:vnoremap <ESC> <nop>
 "
 " Set column width and color
 set colorcolumn=80
