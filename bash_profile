@@ -18,3 +18,7 @@ POWERLINE_BASH_SELECT=1
 unset VIRTUAL_ENV
 # export PYTHONPATH=$PYTHONPATH:"/usr/local/lib/python2.7/site-packages/"
 export PATH="/usr/local/opt/qt/bin:$PATH"
+export PATH="/usr/local/opt/python@2/bin:$PATH"
+export PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
+
+alias lldb="PATH=/usr/bin /usr/bin/lldb"
