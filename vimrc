@@ -20,28 +20,25 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set expandtab
-set tabstop=3
-set shiftwidth=3
+set tabstop=2
+set shiftwidth=2
 execute pathogen#infect()
 filetype off
 syntax on
 set number
 filetype plugin indent on
-set background=light
-let g:solarized_termcolors=256
-colorscheme cobalt2
+colorscheme 1989
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
-set wildchar=<Tab> wildmenu wildmode=full
+" set wildchar=<Tab> wildmenu wildmode=full
 let vim_markdown_preview_github=1
 set clipboard^=unnamed
 
 " for powerline
-source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
-set laststatus=2
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+ set laststatus=2
+ python3 from powerline.vim import setup as powerline_setup
+ python3 powerline_setup()
+ python3 del powerline_setup
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -83,7 +80,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 :nnoremap <Leader>ev :vsplit $MYVIMRC<cr>
 :nnoremap <leader>sv :source $MYVIMRC<cr>
 "Double {{ will open braces for a function
-:inoremap {{ {<ESC>o}<ESC><C-v>kI<TAB><ESC>o<backspace><backspace><backspace>
+:inoremap {{ {<ESC>o}<ESC>O
 "wrap the current word in quotes
 :noremap <Leader>" <ESC>viw<ESC>a"<ESC>bi"<ESC>lel
 "wrap the selection in quotes
@@ -96,14 +93,11 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 :noremap <C-k> <C-w><c-k>
 :noremap <C-l> <C-w><c-l>
 call pathogen#helptags()
-:inoremap <Tab> <C-n>
+" :inoremap <Tab> <C-n>
 :noremap gm `
 :vnoremap <Space> <ESC>
 :vnoremap <ESC> <nop>
 "
-" Set column width and color
-set colorcolumn=80
-highlight ColorColum ctermbg=black
 
 "Ack highlight search term in quickfix window
 let g:ackhighlight=1
@@ -136,12 +130,20 @@ if has("persistent_undo")
 endif
 
 set modifiable
-let g:ycm_autoclose_preview_window_after_completion = 1
 
 function! LatexGenPreview()
   let filename = expand('%:t')
   echo filename
   :silent execute "!pdflatex " shellescape(filename) | execute ":redraw!"
 endfunction
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 :command! L call LatexGenPreview()
+set rtp+=/usr/local/opt/fzf
+" next two lines allow pasting in visual mode w/o overwriting the buffer
+xnoremap p pgvy
+:xnoremap <expr> p 'pgv"'.v:register.'y`>'
+" Set column width and color
+set colorcolumn=80
+highlight ColorColumn ctermbg=darkred
+" call matchadd('ColorColumn', '\%81v', 100)

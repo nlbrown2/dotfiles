@@ -12,13 +12,24 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
-unset VIRTUAL_ENV
+# POWERLINE_BASH_CONTINUATION=1
+# POWERLINE_BASH_SELECT=1
+. /usr/local/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
+# unset VIRTUAL_ENV
 # export PYTHONPATH=$PYTHONPATH:"/usr/local/lib/python2.7/site-packages/"
-export PATH="/usr/local/opt/qt/bin:$PATH"
-export PATH="/usr/local/opt/python@2/bin:$PATH"
-export PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
-
+# export PATH="/usr/local/opt/qt/bin:$PATH"
+# export PATH="/usr/local/opt/python@2/bin:$PATH"
+# export PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 alias lldb="PATH=/usr/bin /usr/bin/lldb"
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+# uncomment below lines to use openssl with c/c++
+# export LDFLAGS=-L/usr/local/opt/openssl/lib
+# export CPPFLAGS=-I/usr/local/opt/openssl/include
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+alias preview="fzf --preview 'bat --color \"always\" {}'"
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim {})+abort'"
+alias ls="exa"
+alias cat="bat"
+source ~/.bashrc
