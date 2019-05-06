@@ -1,35 +1,10 @@
-PS1='\[\033[0;36m\]\w\[\033[0;32m\]$(__git_ps1)\033[0;32m\]\$ \[\033[0m\]'
-source ~/.git-completion.bash
-source ~/.git-prompt.sh
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/Users/nlbrown222/.vimpkg/bin
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-powerline-daemon -q
-# POWERLINE_BASH_CONTINUATION=1
-# POWERLINE_BASH_SELECT=1
-. /usr/local/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
-# unset VIRTUAL_ENV
-# export PYTHONPATH=$PYTHONPATH:"/usr/local/lib/python2.7/site-packages/"
-# export PATH="/usr/local/opt/qt/bin:$PATH"
-# export PATH="/usr/local/opt/python@2/bin:$PATH"
-# export PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-alias lldb="PATH=/usr/bin /usr/bin/lldb"
-export PATH="/usr/local/opt/openssl/bin:$PATH"
-# uncomment below lines to use openssl with c/c++
-# export LDFLAGS=-L/usr/local/opt/openssl/lib
-# export CPPFLAGS=-I/usr/local/opt/openssl/include
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-alias preview="fzf --preview 'bat --color \"always\" {}'"
-export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim {})+abort'"
-alias ls="exa"
-alias cat="bat"
 source ~/.bashrc
+
+# this doesn't really work, but is supposed to run gdb inside of docker
+alias gdb="ln ~/dotfiles/Dockerfile .; ln ~/dotfiles/gdbinit; ln ~/dotfiles/hlgdb.py; docker build -t gdbdocker --build-arg CACHE_DATE=$(date) . > /dev/null; docker run -it --cap-add=SYS_PTRACE --security-opt seccomp=unconfined --privileged gdbdocker"
+
+# alias to source/reload profile
+alias sprofile="source ~/.bash_profile"
+
+# used for hombrew and github 2fa
+export HOMEBREW_GITHUB_API_TOKEN=ce18b606510b61048fd55f5e9b30c2942446f8a9

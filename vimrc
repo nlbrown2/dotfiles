@@ -20,9 +20,11 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set expandtab
-set tabstop=2
-set shiftwidth=2
-execute pathogen#infect()
+set tabstop=4
+set shiftwidth=4
+if !has('nvim')
+  execute pathogen#infect()
+endif
 filetype off
 syntax on
 set number
@@ -33,12 +35,13 @@ let g:jsx_ext_required = 0
 " set wildchar=<Tab> wildmenu wildmode=full
 let vim_markdown_preview_github=1
 set clipboard^=unnamed
-
-" for powerline
- set laststatus=2
- python3 from powerline.vim import setup as powerline_setup
- python3 powerline_setup()
- python3 del powerline_setup
+if !has('nvim')
+  " for powerline
+   set laststatus=2
+   python3 from powerline.vim import setup as powerline_setup
+   python3 powerline_setup()
+   python3 del powerline_setup
+ endif
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -92,7 +95,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 :noremap <C-j> <C-w><c-j>
 :noremap <C-k> <C-w><c-k>
 :noremap <C-l> <C-w><c-l>
-call pathogen#helptags()
+if !has('nvim')
+  call pathogen#helptags()
+endif
 " :inoremap <Tab> <C-n>
 :noremap gm `
 :vnoremap <Space> <ESC>
@@ -144,6 +149,8 @@ set rtp+=/usr/local/opt/fzf
 xnoremap p pgvy
 :xnoremap <expr> p 'pgv"'.v:register.'y`>'
 " Set column width and color
-set colorcolumn=80
+" set colorcolumn=80
 highlight ColorColumn ctermbg=darkred
 " call matchadd('ColorColumn', '\%81v', 100)
+let g:airline#extensions#tmuxline#enabled = 0
+
