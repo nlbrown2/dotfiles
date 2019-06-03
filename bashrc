@@ -8,9 +8,6 @@ HEROKU_AC_BASH_SETUP_PATH=/Users/nlbrown222/Library/Caches/heroku/autocomplete/b
 PS1='\[\033[0;36m\]\w\[\033[0;32m\]$(__git_ps1)\033[0;32m\]\$ \[\033[0m\]'
 source ~/.git-prompt.sh
 
-# git autocomplete
-source ~/.git-completion.bash
-
 # when in a new terminal, virtual env is not active
 unset VIRTUAL_ENV
 
@@ -84,5 +81,22 @@ POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 . /usr/local/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
 
-# get me tokens
-source ~/.tokenrc
+# get me tokens if available
+[[ -r "~/.tokenrc" ]] && . "~/.tokenrc"
+
+# git autocomplete
+# source ~/.git-completion.bash
+
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+# add evergreen
+export PATH=$PATH:~/evergreen
+
+# add yarn (also installed through homebrew so not sure if this is good
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# add ccls to path
+export PATH="$HOME/coc_support/ccls/Release:$PATH"
+
+#add local scripts to path
+export PATH="$HOME/.local/bin:$PATH"
