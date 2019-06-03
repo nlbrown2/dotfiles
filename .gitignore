@@ -1,2 +1,4 @@
 *.swp
 tokenrc
+config/nvim/venv
+config/nvim/node_modules
