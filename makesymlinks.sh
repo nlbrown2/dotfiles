@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directorykkk
-files="bash_profile gvimrc vimrc profile tmux.conf bashrc git-prompt.sh config/nvim config/powerline"
+files="bash_profile gvimrc vimrc profile tmux.conf bashrc git-prompt.sh config/nvim config/powerline gitmessage"
 
 
 ############################
@@ -23,7 +23,7 @@ echo "..done"
 #move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 for file in $files; do
 	echo "Moving any existing dotfiles from ~ to $olddir"
-	    mv ~/.$file ~/dotfiles_old/
+	    cp ~/.$file ~/dotfiles_old/
 	        echo "Creating symlink to $file in home directory."
-	            ln -s $dir/$file ~/.$file
+            ln -s $dir/$file ~/.$file
 	    done
