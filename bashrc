@@ -85,7 +85,7 @@ POWERLINE_BASH_SELECT=1
 [[ -r "~/.tokenrc" ]] && . "~/.tokenrc"
 
 # git autocomplete
-# source ~/.git-completion.bash
+test -f ~/.git-completion.bash && . $_
 
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
