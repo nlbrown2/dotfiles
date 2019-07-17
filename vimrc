@@ -29,20 +29,9 @@ filetype off
 syntax on
 set number
 filetype plugin indent on
-colorscheme 1989
-let g:javascript_plugin_flow = 1
-let g:jsx_ext_required = 0
+" colorscheme 1989
 " set wildchar=<Tab> wildmenu wildmode=full
-let vim_markdown_preview_github=1
 set clipboard^=unnamed
-if !has('nvim')
-  " for powerline
-   set laststatus=2
-   python3 from powerline.vim import setup as powerline_setup
-   python3 powerline_setup()
-   python3 del powerline_setup
- endif
-
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
@@ -88,69 +77,31 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 :noremap <Leader>" <ESC>viw<ESC>a"<ESC>bi"<ESC>lel
 "wrap the selection in quotes
 :vnoremap <Leader>" <ESC>`<i"<ESC>`>la"
-"Don't use ESC!
-:inoremap <ESC> <nop>
 "Easier window management
 :noremap <C-h> <C-w><c-h>
 :noremap <C-j> <C-w><c-j>
 :noremap <C-k> <C-w><c-k>
 :noremap <C-l> <C-w><c-l>
-if !has('nvim')
-  call pathogen#helptags()
-endif
 " :inoremap <Tab> <C-n>
 :noremap gm `
 :vnoremap <Space> <ESC>
-:vnoremap <ESC> <nop>
-"
 
-"Ack highlight search term in quickfix window
-let g:ackhighlight=1
-"Funciton to strip whitespace from a string, useful for arguments
 function! Strip(input_string)
     return substitute(a:input_string, '^\s*\(.\{-}\)\s*$', '\1', '')
 endfunction
 
-function! SearchAndReplace(from, to)
-  exec 'Ack ' Strip(a:from)
-  exec 'Qdo %s/'.Strip(a:from).'/'.Strip(a:to).'/gc'
-endfunction
-if !exists("g:SearchAndReplace")
-  :command -nargs=* SearchAndReplace call SearchAndReplace(<f-args>)
-  let g:SearchAndReplace=1
-endif
-"Remove files in .gitignore from CtrlP
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-let g:ctrlp_map = '<c-f>'
-let g:ctrlp_cmd = 'CtrlPMixed'
 " change quit key for multi cursor
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='j'
-"For persistent undo
-if has("persistent_undo")
-    set undodir=~/.undodir/
-    set undofile
-endif
-
 set modifiable
 
-function! LatexGenPreview()
-  let filename = expand('%:t')
-  echo filename
-  :silent execute "!pdflatex " shellescape(filename) | execute ":redraw!"
-endfunction
-let g:ycm_autoclose_preview_window_after_completion = 1
-
-:command! L call LatexGenPreview()
-set rtp+=/usr/local/opt/fzf
 " next two lines allow pasting in visual mode w/o overwriting the buffer
 xnoremap p pgvy
 :xnoremap <expr> p 'pgv"'.v:register.'y`>'
-" Set column width and color
-" set colorcolumn=80
 highlight ColorColumn ctermbg=darkred
-" call matchadd('ColorColumn', '\%81v', 100)
-let g:airline#extensions#tmuxline#enabled = 0
 
+" clang format options
+let g:clang_format#detect_style_file = 1
+let g:clang_format#auto_format = 1

@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directorykkk
-files="bash_profile gvimrc vimrc profile tmux.conf bashrc git-prompt.sh config/nvim config/powerline gitmessage"
+files="bash_profile gvimrc vimrc profile tmux.conf bashrc git-prompt.sh gitmessage"
 
 
 ############################
