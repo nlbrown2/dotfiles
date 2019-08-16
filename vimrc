@@ -89,7 +89,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "wrap the selection in quotes
 :vnoremap <Leader>" <ESC>`<i"<ESC>`>la"
 "Don't use ESC!
-:inoremap <ESC> <nop>
+":inoremap <ESC> <nop>
 "Easier window management
 :noremap <C-h> <C-w><c-h>
 :noremap <C-j> <C-w><c-j>

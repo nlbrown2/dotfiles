@@ -17,7 +17,7 @@ if dein#load_state('/Users/nathanbrown/.cache/dein')
   call dein#add('/Users/nathanbrown/.cache/dein/repos/github.com/Shougo/dein.vim')
   call dein#add('flazz/vim-colorschemes')
   call dein#add('scrooloose/nerdtree')
-  call dein#add('neoclide/coc.nvim', {'build': './install.sh'})
+  " call dein#add('neoclide/coc.nvim', {'build': './install.sh'})
   call dein#add('tpope/vim-fugitive')
   if has('nvim')
       " no support for powerline yet sads
@@ -62,28 +62,33 @@ colorscheme Tomorrow-Night-Eighties
 set clipboard+=unnamedplus
 let g:airline_theme='iceberg'
 set completeopt=menu
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-" " use tab and shift tab to cycle through completion otions
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" autoclose window if done
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-
-call neomake#configure#automake('nrwi', 200)
 let g:multi_cursor_quit_key = '<ESC>'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 set nohlsearch
-let g:neomake_cpp_clang_args = neomake#makers#ft#cpp#clang().args + ['-I~/mongodb']
 nnoremap <Leader>m :Neomake<CR>
 colorscheme Tomorrow-Night
 autocmd TermOpen * DisableWhitespace
+
+let g:neomake_cpp_enabled_makers=['clang', 'linter', 'tidy']
+" clang-check
+let g:neomake_cpp_clang_maker = {
+            \ 'exe' : 'clang-check',
+            \ 'args': [@%, '-extra-arg', '-fno-modules', '-p', '/Users/nathanbrown/mongodb/mongo/']
+            \ }
+" clang-tidy
+let g:neomake_cpp_tidy_maker = {
+            \ 'exe' : 'clang-tidy',
+            \ 'args': ['-p', '.', '-checks=-*,clang-analyzer-*,-clang-analyzer-cplusplus*,bugprone-*,cert-*,cppcoreguidelines-*,misc-*,modernize-*,performance-*,portability-*,readability-']
+            \ }
+" c++ linter
+let g:neomake_cpp_linter_maker = {
+            \ 'exe' : 'python',
+            \ 'args': ['buildscripts/lint.py']
+            \ }
+" eslint
+let g:neomake_javascript_eslint_maker = {
+            \ 'exe' : 'python',
+            \ 'args': ['buildscripts/eslint.py', 'lint']
+            \ }

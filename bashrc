@@ -100,3 +100,5 @@ export PATH="$HOME/coc_support/ccls/Release:$PATH"
 
 #add local scripts to path
 export PATH="$HOME/.local/bin:$PATH"
+#add llvm to PATH
+#export PATH="$HOME/coc_support/clang+llvm-8.0.0-x86_64-apple-darwin/bin:$PATH"
