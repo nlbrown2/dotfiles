@@ -105,3 +105,13 @@ highlight ColorColumn ctermbg=darkred
 " clang format options
 let g:clang_format#detect_style_file = 1
 let g:clang_format#auto_format = 1
+let g:clang_format#command = '/home/nathan/mongo/python3-venv/bin/python /home/nathan/mongo/buildscripts/clang_format.py format-my master'
+
+" customize YCM
+let g:ycm_max_num_candidates = 5
+let g:ycm_max_num_identifier_candidates = 5
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
+set colorcolumn=80
+
+
