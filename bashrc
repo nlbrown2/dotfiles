@@ -1,6 +1,3 @@
-# heroku autocomplete setup
-HEROKU_AC_BASH_SETUP_PATH=/Users/nlbrown222/Library/Caches/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
-
 # fzf autocomplete
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -14,21 +11,11 @@ source ~/.git-completion.bash
 # when in a new terminal, virtual env is not active
 unset VIRTUAL_ENV
 
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-
-#use lldb not from brew
-alias lldb="PATH=/usr/bin /usr/bin/lldb"
-
-#add openssl to path
-export PATH="/usr/local/opt/openssl/bin:$PATH"
-# uncomment below lines to use openssl with c/c++
-# export LDFLAGS=-L/usr/local/opt/openssl/lib
-# export CPPFLAGS=-I/usr/local/opt/openssl/include
-
 # useful substitutes
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim {})+abort'"
 
+export PATH="/home/nathan/.cargo/bin:$PATH"
 # better ls
 alias ls="exa"
 

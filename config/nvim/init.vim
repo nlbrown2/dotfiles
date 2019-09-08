@@ -1,6 +1,6 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
-let g:python3_host_prog = '/Users/nlbrown222/.config/nvim/venv/bin/python'
+let g:python3_host_prog = '/home/nathan/.config/nvim/venv/bin/python'
 let g:dein#install_process_timeout = 5000
 "dein Scripts-----------------------------
 if &compatible
@@ -8,15 +8,15 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/nlbrown222/.config/nvim/repos/github.com/Shougo/dein.vim
+set runtimepath+=/home/nathan/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/Users/nlbrown222/.cache/dein')
-  call dein#begin('/Users/nlbrown222/.cache/dein')
+if dein#load_state('/home/nathan/.cache/dein')
+  call dein#begin('/home/nathan/.cache/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/Users/nlbrown222/.config/nvim/repos/github.com/Shougo/dein.vim')
+  call dein#add('/home/nathan/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
   "call dein#add('Shougo/neosnippet.vim')
@@ -36,6 +36,7 @@ if dein#load_state('/Users/nlbrown222/.cache/dein')
     call dein#add('roxma/nvim-yarp')
     call dein#add('roxma/vim-hug-neovim-rpc')
   endif
+  call dein#add('flazz/vim-colorschemes')
   call dein#add('neomake/neomake')
   call dein#add('mileszs/ack.vim')
   call dein#add('scrooloose/nerdtree')
@@ -51,7 +52,8 @@ if dein#load_state('/Users/nlbrown222/.cache/dein')
   call dein#add('thaerkh/vim-workspace')
   call dein#add('tpope/vim-eunuch')
   " call dein#add('arithran/vim-delete-hidden-buffers')
-  call dein#add('srishanbhattarai/neovim-spotify', { 'build': 'bash install.sh' })
+  " call dein#add('stsewd/spotify.nvim')
+  " call dein#add('srishanbhattarai/neovim-spotify', { 'build': 'bash install.sh' })
   call dein#add('Shougo/neoinclude.vim')
   " Required:
   call dein#end()
