@@ -1,3 +1,6 @@
 [submodule "config/nvim/repos/github.com/Shougo/dein.vim"]
 	path = config/nvim/repos/github.com/Shougo/dein.vim
 	url = git@github.com:Shougo/dein.vim.git
+[submodule "wallpapers/wallpaper_repo"]
+	path = wallpapers/wallpaper_repo
+	url = https://github.com/kiedtl/walls.git
