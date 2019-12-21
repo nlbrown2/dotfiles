@@ -1,17 +1,16 @@
 {    "languageserver": {
         "ccls": {
-          "command": "/Users/nlbrown222/Documents/ccls/Release/ccls",
-          "args": ["--log-file=/tmp/ccls/logfile"],
+          "command": "ccls",
+          "args": ["--log-file=/tmp/ccls/logfile", "-v=1"],
           "filetypes": ["c", "cpp", "objc", "objcpp"],
           "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
           "initializationOptions": {
              "cache": {
                "directory": "/tmp/ccls"
              },
-             "clang": {
-                 "resourceDir": "/Users/nlbrown222/Documents/clang8/lib/clang/8.0.0",
-                 "extraArgs": ["-isystem/Users/nlbrown222/Documents/clang8/include/c++/v1"]
-             }
+              "clang": {
+                  "extraArgs": ["-isystem", "/home/nathan/ccls/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04/include/c++/v1"]
+              }
           }
         }
       }

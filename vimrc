@@ -29,7 +29,7 @@ filetype off
 syntax on
 set number
 filetype plugin indent on
-colorscheme 1989
+" colorscheme 1989
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
 " set wildchar=<Tab> wildmenu wildmode=full
@@ -38,9 +38,9 @@ set clipboard^=unnamed
 if !has('nvim')
   " for powerline
    set laststatus=2
-   python3 from powerline.vim import setup as powerline_setup
-   python3 powerline_setup()
-   python3 del powerline_setup
+   " python3 from powerline.vim import setup as powerline_setup
+   " python3 powerline_setup()
+   " python3 del powerline_setup
  endif
 
 " NERDTress File highlighting

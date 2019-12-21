@@ -48,7 +48,7 @@ if dein#load_state('/home/nathan/.cache/dein')
   call dein#add('kshenoy/vim-signature')
   call dein#add('cocopon/iceberg.vim')
   call dein#add('octol/vim-cpp-enhanced-highlight')
-  call dein#add('iamcco/markdown-preview.nvim', { 'build': 'cd app & yarn install'  })
+  call dein#add('iamcco/markdown-preview.nvim', { 'on_ft': ['markdown', 'pandoc.markdown', 'rmd'], 'build': 'cd app & yarn install'  })
   call dein#add('thaerkh/vim-workspace')
   call dein#add('tpope/vim-eunuch')
   " call dein#add('arithran/vim-delete-hidden-buffers')
@@ -71,7 +71,6 @@ endif
 
 "End dein Scripts-------------------------
 source ~/.vimrc
-colorscheme Tomorrow-Night-Eighties
 set clipboard+=unnamedplus
 let g:airline_theme='iceberg'
 " let g:deoplete#enable_at_startup=1
@@ -120,5 +119,6 @@ set nohlsearch
 let g:neomake_cpp_clang_args = neomake#makers#ft#cpp#clang().args + ['-I..']
 nnoremap <leader>w :ToggleWorkspace<CR>
 nnoremap <leader>m :Neomake<CR>
-colorscheme Tomorrow-Night
+colorscheme 0x7A69_dark
 autocmd TermOpen * DisableWhitespace
+au BufRead,BufNewFile *.cuh set filetype=cpp

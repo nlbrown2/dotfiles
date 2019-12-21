@@ -1,8 +1,8 @@
 # fzf autocomplete
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# command prompt
-PS1='\[\033[0;36m\]\w\[\033[0;32m\]$(__git_ps1)\033[0;32m\]\$ \[\033[0m\]'
+# command prompt right before the $\033[0;32m\]
+PS1='\[\033[0;36m\]\w\[\033[0;32m\]$(__git_ps1)\$ \[\033[0m\]'
 source ~/.git-prompt.sh
 
 # git autocomplete
@@ -50,8 +50,8 @@ function upsync() {
 }
 
 # java environment manager
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+# export PATH="$HOME/.jenv/bin:$PATH"
+# eval "$(jenv init -)"
 
 # latex support
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/Users/nlbrown222/.vimpkg/bin
@@ -69,7 +69,31 @@ export NVM_DIR="$HOME/.nvm"
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-. /usr/local/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
+# . /home/nathan/.local/lib/python4.6/site-packages/powerline/bindings/bash/powerline.sh
 
 # get me tokens
 source ~/.tokenrc
+
+# add bot-lcm-tunnel to PATH
+export PATH="$PATH:$HOME/Documents/eecs467/libbot2/build/bin"
+export VX_SHADER_PATH=/home/nathan/Documents/eecs467/labs/a1_code/mobilebot-f19/botgui/vx/shaders
+export VX_FONT_PATH=/home/nathan/Documents/eecs467/labs/a1_code/mobilebot-f19/botgui/vx/fonts
+export CLASSPATH=:~/commons-io-2.6.jar 
+
+#add bolt binaries to PATH
+export PATH="$PATH:/home/nathan/Documents/research/build/bin"
+
+#add CCLS to PATH
+export PATH="$PATH:/home/nathan/ccls/Release"
+
+[ -f ~/.local/bin/init_directory ] && source ~/.local/bin/init_directory
+
+alias sourcerc="source ~/.bashrc"
+[ -f ~/ros_catkin_ws/devel/setup.bash ] && source ~/ros_catkin_ws/devel/setup.bash
+export PATH="$PATH:/home/nathan/Documents/research/pmu-tools/"
+export PATH="$PATH:/home/nathan/Documents/KTPuild/"
+export PATH="$PATH:/home/nathan/.local/bin"
+
+# compiler flags for BOLT
+export LDFLAGS="-Wl,-q"
+source /opt/ros/melodic/setup.bash
