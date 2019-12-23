@@ -3,7 +3,7 @@ Xft.hinting: true
 Xft.hintstyle: hintslight
 Xft.antialias: true
 Xft.rgba: rgb
-
+Xcursor.size: 74
 XTerm*faceName: Ubuntu Mono
 XTerm*faceSize: 20
 XTerm*renderFont: true

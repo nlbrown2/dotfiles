@@ -4,3 +4,9 @@
 [submodule "wallpapers/wallpaper_repo"]
 	path = wallpapers/wallpaper_repo
 	url = https://github.com/kiedtl/walls.git
+[submodule "config/i3blocks"]
+	path = config/i3blocks
+	url = https://github.com/vivien/i3blocks-contrib
+[submodule "config/i3blocks-contrib"]
+	path = config/i3blocks-contrib
+	url = https://github.com/vivien/i3blocks-contrib.git
