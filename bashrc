@@ -86,7 +86,8 @@ export PATH="$PATH:/home/nathan/Documents/research/build/bin"
 #add CCLS to PATH
 export PATH="$PATH:/home/nathan/ccls/Release"
 
-[ -f ~/.local/bin/init_directory ] && source ~/.local/bin/init_directory
+# Load colorscheme from wal/pywal. Can't use bat
+(/bin/cat ~/.cache/wal/sequences &)
 
 alias sourcerc="source ~/.bashrc"
 [ -f ~/ros_catkin_ws/devel/setup.bash ] && source ~/ros_catkin_ws/devel/setup.bash
@@ -97,3 +98,5 @@ export PATH="$PATH:/home/nathan/.local/bin"
 # compiler flags for BOLT
 export LDFLAGS="-Wl,-q"
 source /opt/ros/melodic/setup.bash
+
+[ -f ~/.local/bin/init_directory ] && source ~/.local/bin/init_directory
