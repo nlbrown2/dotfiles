@@ -55,6 +55,7 @@ if dein#load_state('/home/nathan/.cache/dein')
   " call dein#add('stsewd/spotify.nvim')
   " call dein#add('srishanbhattarai/neovim-spotify', { 'build': 'bash install.sh' })
   call dein#add('Shougo/neoinclude.vim')
+  call dein#add('dylanaraps/wal.vim')
   " Required:
   call dein#end()
   call dein#save_state()
@@ -119,6 +120,6 @@ set nohlsearch
 let g:neomake_cpp_clang_args = neomake#makers#ft#cpp#clang().args + ['-I..']
 nnoremap <leader>w :ToggleWorkspace<CR>
 nnoremap <leader>m :Neomake<CR>
-colorscheme 0x7A69_dark
+colorscheme wal "0x7A69_dark was my old one. Use Wal themes instead
 autocmd TermOpen * DisableWhitespace
 au BufRead,BufNewFile *.cuh set filetype=cpp
