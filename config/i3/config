@@ -192,3 +192,8 @@ bindsym $mod+b bar hidden_state toggle
 
 # set background
 exec --no-startup-id feh --bg-fill ~/.wallpapers/wallpaper_repo/colliding-planets.png
+
+# kill gnome-notifications
+exec --no-startup-id killal -q /usr/lib/gnome-settings-daemon/gsd-print-notifications
+# use dunst instead
+exec --no-startup-id dunst -config ~/.dunstrc
