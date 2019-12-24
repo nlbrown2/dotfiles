@@ -1,0 +1,137 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
+command=/home/nathan/dotfiles/config/i3blocks/$BLOCK_NAME
+separator_block_width=15
+markup=none
+# We use the global settings as a shortcut to define our own separator.
+# Based on the default i3blocks config file.
+#full_text=〉
+#full_text=
+full_text=
+align=center
+color=#FFFFFF
+separator=false
+separator_block_width=7
+
+# Memory usage
+#
+# The type defaults to "mem" if the instance is not specified.
+[memory]
+label=RAM
+interval=30
+color=#666666
+
+[separator]
+color=#666666
+
+[memory]
+label=SWAP
+instance=swap
+interval=30
+color=#666666
+
+[separator]
+color=#666666
+# Disk usage
+#
+# The directory defaults to $HOME if the instance is not specified.
+# The script may be called with a optional argument to set the alert
+# (defaults to 10 for 10%).
+[disk]
+label=/:
+interval=30
+color=#666666
+
+[separator]
+color=#666666
+
+# CPU usage
+#
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+[cpu_usage]
+label=CPU
+interval=10
+min_width=CPU 100.00%
+color=#666666
+
+[separator]
+color=#666666
+
+[wifi]
+label=wifi:
+interval=10
+
+[separator]
+color=#666666
+# Battery indicator
+#
+# The battery instance defaults to 0.
+[battery]
+#label=BAT
+label=BAT ⚡
+interval=30
+command=/home/nathan/dotfiles/config/i3blocks-contrib/battery/battery
+
+[separator]
+color=#666666
+# Date Time
+#
+[time]
+#command=date '+%Y-%m-%d %H:%M:%S'
+command=date '+%a, %b %d %r'
+interval=1
+
+[separator]
+color=#666666
+
+[mediaplayer]
+interval=5
+signal=10
+
+[separator]
+color=#666666
+
+[shutdown_menu]
+full_text=Quit
+# If you are using FontAwesome, we recommend the power-off icon:
+# http://fontawesome.io/icon/power-off/
+#FG_COLOR=#bbbbbb
+#BG_COLOR=#111111
+#HLFG_COLOR=#111111
+#HLBG_COLOR=#bbbbbb
+#BORDER_COLOR=#222222
+#ROFI_TEXT=Menu:
+#ROFI_OPTIONS=-width 11 -location 3 -hide-scrollbar -bw 2
+#ZENITY_TITLE=Menu
+#ZENITY_TEXT=Action:
+#ZENITY_OPTIONS=--column= --hide-header
+#ENABLE_CONFIRMATIONS=true (must be true or false)
+#LAUNCHER=rofi (must be rofi or zenity)
+#LOCKSCRIPT=i3lock --color=${BG_COLOR#"#"}
+

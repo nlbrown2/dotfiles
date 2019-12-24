@@ -1,0 +1,6 @@
+#!/bin/bash
+# uses playerctl and assumes spotify. Not very robust, but it works, and it is mine
+ARTIST=$(playerctl --player=spotify metadata artist)
+TITLE=$(playerctl --player=spotify metadata title)
+# limit to N characters
+echo "$TITLE - $ARTIST" | cut -c -25
