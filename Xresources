@@ -4,7 +4,7 @@ Xft.hintstyle: hintslight
 Xft.antialias: true
 Xft.rgba: rgb
 Xcursor.size: 74
-XTerm*faceName: Ubuntu Mono
+XTerm*faceName: DejaVu Sans Mono, Awesome
 XTerm*faceSize: 20
 XTerm*renderFont: true
 XTerm*Background: black
