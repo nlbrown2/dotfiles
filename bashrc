@@ -98,5 +98,6 @@ export PATH="$PATH:/home/nathan/.local/bin"
 # compiler flags for BOLT
 export LDFLAGS="-Wl,-q"
 source /opt/ros/melodic/setup.bash
-
+export EDITOR="nvim"
+export TERMINAL="kitty"
 [ -f ~/.local/bin/init_directory ] && source ~/.local/bin/init_directory

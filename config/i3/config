@@ -30,7 +30,7 @@ font pango:DejaVu Sans Mono, Awesome 16
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xterm -u8
+bindsym $mod+Return exec TERMINAL=kitty i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
