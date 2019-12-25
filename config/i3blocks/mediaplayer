@@ -2,5 +2,14 @@
 # uses playerctl and assumes spotify. Not very robust, but it works, and it is mine
 ARTIST=$(playerctl --player=spotify metadata artist)
 TITLE=$(playerctl --player=spotify metadata title)
+STATUS=$(playerctl --player=spotify status)
 # limit to N characters
 echo "$TITLE - $ARTIST" | cut -c -25
+echo
+if [ $STATUS == "Paused" ]; then
+    echo "#e0da63" # kind of a muted yellow
+elif [ $STATUS == "Playing" ]; then
+    echo "#006600"
+else
+    echo "#FF0000"
+fi

@@ -69,16 +69,16 @@ color=#666666
 
 # CPU usage
 [cpu_usage]
-label=CPU
+label=
 interval=10
-min_width=CPU 100.00%
+min_width= 100.00%
 color=#666666
 
 [separator]
 color=#666666
 
 [wifi]
-label=wifi:
+label=
 interval=10
 
 [separator]
@@ -89,9 +89,16 @@ color=#666666
 # The battery instance defaults to 0.
 [battery]
 #label=BAT
-label=BAT ⚡
+label=⚡
 interval=30
 command=/home/nathan/dotfiles/config/i3blocks-contrib/battery/battery
+
+[separator]
+color=#666666
+
+[mediaplayer]
+interval=5
+signal=10
 
 [separator]
 color=#666666
@@ -102,13 +109,6 @@ color=#666666
 #command=date '+%Y-%m-%d %H:%M:%S'
 command=date '+%a, %b %d %r'
 interval=1
-
-[separator]
-color=#666666
-
-[mediaplayer]
-interval=5
-signal=10
 
 [separator]
 color=#666666
