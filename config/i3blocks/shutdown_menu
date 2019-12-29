@@ -27,7 +27,7 @@
 #######################################################################
 
 # Use a custom lock script
-LOCKSCRIPT="~/.local/bin/lock"
+LOCKSCRIPT="~/.config/swaylock/lock.sh 50"
 
 # Colors: FG (foreground), BG (background), HL (highlighted)
 FG_COLOR="${FG_COLOR:-#bbbbbb}"
@@ -120,7 +120,7 @@ menu=(
   [Suspend]="systemctl suspend"
   [Halt]="systemctl halt"
   [Lock]="${LOCKSCRIPT:-i3lock --color=${BG_COLOR#"#"}}"
-  [Logout]="i3-msg exit"
+  [Logout]="swaymsg exit"
   [Cancel]=""
 )
 menu_nrows=${#menu[@]}
