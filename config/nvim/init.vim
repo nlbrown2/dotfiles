@@ -2,21 +2,23 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 let g:python3_host_prog = '/home/nathan/.config/nvim/venv/bin/python'
 let g:dein#install_process_timeout = 5000
+
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
 endif
 
 " Required:
-set runtimepath+=/home/nathan/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/home/nathan/dotfiles/config/nvim/./repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/home/nathan/.cache/dein')
-  call dein#begin('/home/nathan/.cache/dein')
+if dein#load_state('/home/nathan/dotfiles/config/nvim/.')
+  call dein#begin('/home/nathan/dotfiles/config/nvim/.')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/home/nathan/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('/home/nathan/dotfiles/config/nvim/./repos/github.com/Shougo/dein.vim')
+
 
   " Add or remove your plugins here like this:
   "call dein#add('Shougo/neosnippet.vim')
