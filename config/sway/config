@@ -232,9 +232,10 @@ bar {
 
     colors {
         statusline #ffffff
-        background #323232
+        background $background
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
+    font pango:DejaVu Sans Mono, Font Awesome 5 Free 16
 }
 
 exec mako
