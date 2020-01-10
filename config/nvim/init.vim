@@ -9,15 +9,15 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/home/nathan/dotfiles/config/nvim/./repos/github.com/Shougo/dein.vim
+set runtimepath+=/home/nathan/.cache/nvim/./repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/home/nathan/dotfiles/config/nvim/.')
-  call dein#begin('/home/nathan/dotfiles/config/nvim/.')
+if dein#load_state('/home/nathan/.cache/nvim/.')
+  call dein#begin('/home/nathan/.cache/nvim/.')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/home/nathan/dotfiles/config/nvim/./repos/github.com/Shougo/dein.vim')
+  call dein#add('/home/nathan/.cache/nvim/./repos/github.com/Shougo/dein.vim')
 
 
   " Add or remove your plugins here like this:
