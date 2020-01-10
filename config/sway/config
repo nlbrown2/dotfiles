@@ -20,9 +20,9 @@ set $term kitty
 set $menu rofi -show combi -font "Monospace 16" -lines 10 -combi-modi "window#drun#ssh#run"
 
 font pango:DejaVu Sans Mono, Awesome 16
-gaps inner 14
+gaps inner 10
 gaps outer -2
-#smart_gaps on
+smart_gaps on
 
 # Pywal inclusion
 include "$HOME/.cache/wal/colors-sway"
@@ -130,6 +130,15 @@ bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
 bindsym XF86KbdBrightnessUp exec --no-startup-id "~/.config/i3/keyboard_backlight.sh up"
 bindsym XF86KbdBrightnessDown exec --no-startup-id "~/.config/i3/keyboard_backlight.sh down"
+
+# Audio controls
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2%
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
 #
 # Workspaces:
 #
