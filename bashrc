@@ -1,3 +1,6 @@
+if [ "$(tty)" = "/dev/tty1" ]; then
+    exec sway
+fi
 # fzf autocomplete
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
