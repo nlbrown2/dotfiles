@@ -3,10 +3,10 @@
 
 # command prompt right before the $\033[0;32m\]
 PS1='\[\033[0;36m\]\w\[\033[0;32m\]$(__git_ps1)\$ \[\033[0m\]'
-source ~/.git-prompt.sh
+[ -f  ~/.git-prompt.sh ] && source ~/.git-prompt.sh
 
 # git autocomplete
-source ~/.git-completion.bash
+[ -f ~/.git-completion.bash ] && source ~/.git-completion.bash
 
 # when in a new terminal, virtual env is not active
 unset VIRTUAL_ENV
@@ -66,13 +66,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # use powerline
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
+# powerline-daemon -q
+# POWERLINE_BASH_CONTINUATION=1
+# POWERLINE_BASH_SELECT=1
 # . /home/nathan/.local/lib/python4.6/site-packages/powerline/bindings/bash/powerline.sh
 
 # get me tokens
-source ~/.tokenrc
+[ -f ~/.tokenrc ] && source ~/.tokenrc
 
 # add bot-lcm-tunnel to PATH
 export PATH="$PATH:$HOME/Documents/eecs467/libbot2/build/bin"
@@ -97,7 +97,7 @@ export PATH="$PATH:/home/nathan/.local/bin"
 
 # compiler flags for BOLT
 export LDFLAGS="-Wl,-q"
-source /opt/ros/melodic/setup.bash
+[ -f /opt/ros/melodic/setup.bash ] && source /opt/ros/melodic/setup.bash
 export EDITOR="nvim"
 export TERMINAL="kitty"
 [ -f ~/.local/bin/init_directory ] && source ~/.local/bin/init_directory
