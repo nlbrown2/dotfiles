@@ -58,6 +58,7 @@ if dein#load_state('/home/nathan/.cache/nvim/.')
   " call dein#add('srishanbhattarai/neovim-spotify', { 'build': 'bash install.sh' })
   call dein#add('Shougo/neoinclude.vim')
   call dein#add('dylanaraps/wal.vim')
+  call dein#add('xuhdev/vim-latex-live-preview')
   " Required:
   call dein#end()
   call dein#save_state()
