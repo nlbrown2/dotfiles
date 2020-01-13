@@ -1,3 +1,8 @@
 {
     output eDP-1 enable scale 1.20
 }
+{
+    output eDP-1 disable
+    output "Lenovo Group Limited LEN LI2323swA 31611F03G2246" enable position 1920,0
+    output "Lenovo Group Limited LEN LI2323swA 31611F03G2152" enable position 0,0
+}
