@@ -132,12 +132,19 @@ bindsym XF86KbdBrightnessUp exec --no-startup-id "~/.config/i3/keyboard_backligh
 bindsym XF86KbdBrightnessDown exec --no-startup-id "~/.config/i3/keyboard_backlight.sh down"
 
 # Audio controls
+# Audio Function keys don't work, but thats ok for now
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2%
+bindsym $mod+F12 exec pactl set-sink-volume 0 +2%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2%
+bindsym $mod+F11 exec pactl set-sink-volume 0 -2%
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+bindsym $mod+F10 exec pactl set-sink-mute 0 toggle
 bindsym XF86AudioPlay exec playerctl play-pause
+bindsym $mod+F7 exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
+bindsym $mod+F8 exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+bindsym $mod+F6 exec playerctl previous
 
 #
 # Workspaces:
