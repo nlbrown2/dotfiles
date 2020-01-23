@@ -98,6 +98,9 @@ input type:touchpad natural_scroll enabled
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
+    # Trigger powerdown menu
+    bindsym $mod+Shift+p exec ~/.config/i3blocks/shutdown_menu
+
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 #
