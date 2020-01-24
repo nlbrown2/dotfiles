@@ -5,8 +5,9 @@ fi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # command prompt right before the $\033[0;32m\]
-PS1='\[\033[0;36m\]\w\[\033[0;32m\]$(__git_ps1)\$ \[\033[0m\]'
+#PS1='\[\033[0;36m\]\w\[\033[0;32m\]$(__git_ps1)\$ \[\033[0m\]'
 [ -f  ~/.git-prompt.sh ] && source ~/.git-prompt.sh
+PS1='\[\033[01;31m\]\w\[\033[01;36m\]$(__git_ps1)\[\033[01;31m\]\\$ \[\033[00m\]'
 
 # git autocomplete
 [ -f ~/.git-completion.bash ] && source ~/.git-completion.bash
