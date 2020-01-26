@@ -53,6 +53,12 @@ function upsync() {
   rsync -avzuP --exclude=".git/" $PWD/ sftpcaen:$REMOTE_DIR
 }
 
+function resetwifi() {
+    DRIVER=$(lshw -C network 2>&1 | grep wireless | grep driver | sed 's/ /\n/g' | grep driver= | tail -c +8)
+    echo "Resetting driver: $DRIVER"
+    sudo modprobe -r $DRIVER && sudo modprobe $DRIVER
+}
+
 # java environment manager
 # export PATH="$HOME/.jenv/bin:$PATH"
 # eval "$(jenv init -)"
