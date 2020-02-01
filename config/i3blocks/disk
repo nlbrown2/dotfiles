@@ -1,5 +1,6 @@
 #!/bin/sh
-DIR="/"
+FIRST_ARG="$1"
+DIR="${FIRST_ARG:-/}"
 WARNING_THRESH=75
 
 LOCAL_FLAG="-l"

@@ -67,6 +67,15 @@ color=#666666
 [separator]
 color=#666666
 
+[disk]
+label=/home:
+command=/home/nathan/dotfiles/config/i3blocks/$BLOCK_NAME /home
+interval=30
+color=#666666
+
+[separator]
+color=#666666
+
 # CPU usage
 [cpu_usage]
 label=
