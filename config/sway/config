@@ -261,5 +261,6 @@ bar {
 
 exec mako
 exec kanshi
+exec redshift
 
 include /etc/sway/config.d/*
