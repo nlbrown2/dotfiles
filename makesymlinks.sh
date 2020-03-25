@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bash_profile gvimrc vimrc profile tmux.conf bashrc config/nvim config/powerline git-completion.bash git-prompt.sh config/i3 wallpapers dunstrc Xresources config/rofi config/i3blocks config/kitty config/conky config/sway config/swaylock config/kanshi config/mako"
+files="bash_profile gvimrc vimrc profile tmux.conf bashrc config/nvim config/powerline git-completion.bash git-prompt.sh config/i3 wallpapers dunstrc Xresources config/rofi config/i3blocks config/kitty config/conky config/sway config/swaylock config/kanshi config/mako local/bin"
 
 
 ############################

@@ -260,7 +260,7 @@ bar {
 }
 
 exec mako
-exec kanshi
+exec_always run_kanshi.sh
 exec redshift
 
 include /etc/sway/config.d/*
