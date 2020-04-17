@@ -1,0 +1,21 @@
+set $wallpaper /home/nathan/dotfiles/wallpapers/wallpaper_repo/stones-water.jpg
+
+set $background #121516
+set $foreground #cadde3
+
+set $color0 #121516
+set $color1 #C58F6A
+set $color2 #4E7A85
+set $color3 #687F80
+set $color4 #61969F
+set $color5 #559EAD
+set $color6 #95A1A5
+set $color7 #cadde3
+set $color8 #8d9a9e
+set $color9 #C58F6A
+set $color10 #4E7A85
+set $color11 #687F80
+set $color12 #61969F
+set $color13 #559EAD
+set $color14 #95A1A5
+set $color15 #cadde3

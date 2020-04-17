@@ -1,0 +1,24 @@
+wallpaper: "/home/nathan/dotfiles/wallpapers/wallpaper_repo/stones-water.jpg"
+
+special:
+    background: "#121516"
+    foreground: "#cadde3"
+    cursor: "#cadde3"
+
+colors:
+    color0: "#121516"
+    color1: "#C58F6A"
+    color2: "#4E7A85"
+    color3: "#687F80"
+    color4: "#61969F"
+    color5: "#559EAD"
+    color6: "#95A1A5"
+    color7: "#cadde3"
+    color8: "#8d9a9e"
+    color9: "#C58F6A"
+    color10: "#4E7A85"
+    color11: "#687F80"
+    color12: "#61969F"
+    color13: "#559EAD"
+    color14: "#95A1A5"
+    color15: "#cadde3"

@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png",
+    "alpha": "100",
+    "special": {
+        "background": "#3e450f",
+        "foreground": "#c6dde4",
+        "cursor": "#c6dde4"
+    },
+    "colors": {
+        "color0": "#3e450f",
+        "color1": "#509EC1",
+        "color2": "#58A9CA",
+        "color3": "#64B9D6",
+        "color4": "#60BAE2",
+        "color5": "#6BC3DD",
+        "color6": "#74CFE6",
+        "color7": "#c6dde4",
+        "color8": "#8a9a9f",
+        "color9": "#509EC1",
+        "color10": "#58A9CA",
+        "color11": "#64B9D6",
+        "color12": "#60BAE2",
+        "color13": "#6BC3DD",
+        "color14": "#74CFE6",
+        "color15": "#c6dde4"
+    }
+}

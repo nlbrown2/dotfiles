@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/usr/share/backgrounds/woven.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0c0f11",
+        "foreground": "#91999c",
+        "cursor": "#91999c"
+    },
+    "colors": {
+        "color0": "#0c0f11",
+        "color1": "#192224",
+        "color2": "#1A2225",
+        "color3": "#1A2325",
+        "color4": "#1D252A",
+        "color5": "#232D33",
+        "color6": "#2E3C44",
+        "color7": "#91999c",
+        "color8": "#656b6d",
+        "color9": "#192224",
+        "color10": "#1A2225",
+        "color11": "#1A2325",
+        "color12": "#1D252A",
+        "color13": "#232D33",
+        "color14": "#2E3C44",
+        "color15": "#91999c"
+    }
+}

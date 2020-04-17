@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/nathan/dotfiles/wallpapers/wallpaper_repo/stones-water.jpg"
+let background = "#121516"
+let foreground = "#cadde3"
+let cursor     = "#cadde3"
+
+" Colors
+let color0  = "#121516"
+let color1  = "#C58F6A"
+let color2  = "#4E7A85"
+let color3  = "#687F80"
+let color4  = "#61969F"
+let color5  = "#559EAD"
+let color6  = "#95A1A5"
+let color7  = "#cadde3"
+let color8  = "#8d9a9e"
+let color9  = "#C58F6A"
+let color10 = "#4E7A85"
+let color11 = "#687F80"
+let color12 = "#61969F"
+let color13 = "#559EAD"
+let color14 = "#95A1A5"
+let color15 = "#cadde3"

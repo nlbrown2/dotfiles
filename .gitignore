@@ -2,3 +2,4 @@
 tokenrc
 config/nvim/venv
 config/nvim/node_modules
+config/nvim/.cache

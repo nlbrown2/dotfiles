@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/nathan/dotfiles/wallpapers/AloneButAwesome.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0C0103",
+        "foreground": "#db9fb9",
+        "cursor": "#db9fb9"
+    },
+    "colors": {
+        "color0": "#0C0103",
+        "color1": "#F7B12E",
+        "color2": "#EE976B",
+        "color3": "#F6CB4D",
+        "color4": "#5D05A0",
+        "color5": "#971291",
+        "color6": "#A70593",
+        "color7": "#db9fb9",
+        "color8": "#996f81",
+        "color9": "#F7B12E",
+        "color10": "#EE976B",
+        "color11": "#F6CB4D",
+        "color12": "#5D05A0",
+        "color13": "#971291",
+        "color14": "#A70593",
+        "color15": "#db9fb9"
+    }
+}

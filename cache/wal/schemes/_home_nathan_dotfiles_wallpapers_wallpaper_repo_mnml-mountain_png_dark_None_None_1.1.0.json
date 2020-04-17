@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/nathan/dotfiles/wallpapers/wallpaper_repo/mnml-mountain.png",
+    "alpha": "100",
+    "special": {
+        "background": "#171c25",
+        "foreground": "#e4abb7",
+        "cursor": "#e4abb7"
+    },
+    "colors": {
+        "color0": "#171c25",
+        "color1": "#BE6078",
+        "color2": "#CF657D",
+        "color3": "#D4677F",
+        "color4": "#D86880",
+        "color5": "#D86880",
+        "color6": "#D96880",
+        "color7": "#e4abb7",
+        "color8": "#9f7780",
+        "color9": "#BE6078",
+        "color10": "#CF657D",
+        "color11": "#D4677F",
+        "color12": "#D86880",
+        "color13": "#D86880",
+        "color14": "#D96880",
+        "color15": "#e4abb7"
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/usr/share/backgrounds/wallpapers-juhraya/Manjaro Juhraya (clean) - Mr_Glitch(Projekt:Root).png",
+    "alpha": "100",
+    "special": {
+        "background": "#0c0f11",
+        "foreground": "#dcdce7",
+        "cursor": "#dcdce7"
+    },
+    "colors": {
+        "color0": "#0c0f11",
+        "color1": "#C3875E",
+        "color2": "#357B86",
+        "color3": "#1CAE91",
+        "color4": "#2497A3",
+        "color5": "#6F8C8F",
+        "color6": "#A6A7B8",
+        "color7": "#dcdce7",
+        "color8": "#9a9aa1",
+        "color9": "#C3875E",
+        "color10": "#357B86",
+        "color11": "#1CAE91",
+        "color12": "#2497A3",
+        "color13": "#6F8C8F",
+        "color14": "#A6A7B8",
+        "color15": "#dcdce7"
+    }
+}

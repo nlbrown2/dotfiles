@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/usr/share/backgrounds/layers-blue-lockscreen.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0c0f11",
+        "foreground": "#87979b",
+        "cursor": "#87979b"
+    },
+    "colors": {
+        "color0": "#0c0f11",
+        "color1": "#182023",
+        "color2": "#1B2429",
+        "color3": "#263238",
+        "color4": "#0A3C44",
+        "color5": "#233B42",
+        "color6": "#0C4A54",
+        "color7": "#87979b",
+        "color8": "#5e696c",
+        "color9": "#182023",
+        "color10": "#1B2429",
+        "color11": "#263238",
+        "color12": "#0A3C44",
+        "color13": "#233B42",
+        "color14": "#0C4A54",
+        "color15": "#87979b"
+    }
+}

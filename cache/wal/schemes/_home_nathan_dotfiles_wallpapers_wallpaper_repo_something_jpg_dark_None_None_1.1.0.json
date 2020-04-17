@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/nathan/dotfiles/wallpapers/wallpaper_repo/something.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0C0C0B",
+        "foreground": "#d7d8d6",
+        "cursor": "#d7d8d6"
+    },
+    "colors": {
+        "color0": "#0C0C0B",
+        "color1": "#6D7F7A",
+        "color2": "#86857B",
+        "color3": "#689393",
+        "color4": "#959A94",
+        "color5": "#B6B7B3",
+        "color6": "#BEC0BD",
+        "color7": "#d7d8d6",
+        "color8": "#969795",
+        "color9": "#6D7F7A",
+        "color10": "#86857B",
+        "color11": "#689393",
+        "color12": "#959A94",
+        "color13": "#B6B7B3",
+        "color14": "#BEC0BD",
+        "color15": "#d7d8d6"
+    }
+}
