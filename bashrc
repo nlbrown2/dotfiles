@@ -59,6 +59,11 @@ function resetwifi() {
     sudo modprobe -r $DRIVER;
     sudo modprobe $DRIVER
 }
+function resetmouse() {
+    echo "Resetting hid-magicmouse"
+    sudo modprobe -r hid-magicmouse
+    sudo modprobe hid-magicmouse
+}
 
 # java environment manager
 # export PATH="$HOME/.jenv/bin:$PATH"
