@@ -50,10 +50,10 @@ client.background       $background
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 300 'swaylock-blur' \
+         timeout 300 '/home/nathan/.config/swaylock/lock.sh' \
          timeout 600 'swaymsg "output * dpms off"' \
               resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock-blur'
+         before-sleep '/home/nathan/.config/swaylock/lock.sh'
 for_window [app_id="firefox"] inhibit_idle fullscreen
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
