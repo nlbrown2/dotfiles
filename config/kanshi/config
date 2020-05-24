@@ -14,3 +14,7 @@
     output eDP-1 disable
     output "Lenovo Group Limited LEN LI2323swA 31611F03G2152" enable position 0,0 scale 1.25
 }
+{
+    output eDP-1 disable
+    output "Unknown VG27A L3LMQS052509" enable position 0,0
+}
