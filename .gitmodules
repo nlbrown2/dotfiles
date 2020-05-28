@@ -7,3 +7,6 @@
 [submodule "config/i3blocks-contrib"]
 	path = config/i3blocks-contrib
 	url = https://github.com/vivien/i3blocks-contrib.git
+[submodule "swaylock-effects"]
+	path = swaylock-effects
+	url = git@github.com:mortie/swaylock-effects.git
