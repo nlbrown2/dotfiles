@@ -24,7 +24,7 @@ if dein#load_state('/home/nathan/.cache/nvim/.')
   "call dein#add('Shougo/neosnippet.vim')
    if has('nvim')
       " nvim doesn't support powerline yet: https://github.com/powerline/powerline/issues/1287
-      call dein#add('vim-airline/vim-airline')
+      call dein#add('vim-airline/vim-airline') " better status bar
       call dein#add('vim-airline/vim-airline-themes')
     else
       call dein#add('powerline/powerline')
@@ -38,27 +38,21 @@ if dein#load_state('/home/nathan/.cache/nvim/.')
     call dein#add('roxma/nvim-yarp')
     call dein#add('roxma/vim-hug-neovim-rpc')
   endif
-  call dein#add('flazz/vim-colorschemes')
-  call dein#add('neomake/neomake')
-  call dein#add('mileszs/ack.vim')
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('tpope/vim-commentary')
-  call dein#add('tpope/vim-fugitive')
-  call dein#add('terryma/vim-multiple-cursors')
-  call dein#add('ntpeters/vim-better-whitespace')
-  call dein#add('sakhnik/nvim-gdb', {'build': './install.sh'})
-  call dein#add('kshenoy/vim-signature')
-  call dein#add('cocopon/iceberg.vim')
-  call dein#add('octol/vim-cpp-enhanced-highlight')
-  call dein#add('iamcco/markdown-preview.nvim', { 'on_ft': ['markdown', 'pandoc.markdown', 'rmd'], 'build': 'cd app & yarn install'  })
-  call dein#add('thaerkh/vim-workspace')
-  call dein#add('tpope/vim-eunuch')
-  " call dein#add('arithran/vim-delete-hidden-buffers')
-  " call dein#add('stsewd/spotify.nvim')
-  " call dein#add('srishanbhattarai/neovim-spotify', { 'build': 'bash install.sh' })
-  call dein#add('Shougo/neoinclude.vim')
-  call dein#add('dylanaraps/wal.vim')
-  call dein#add('xuhdev/vim-latex-live-preview')
+  call dein#add('flazz/vim-colorschemes') " colorscheme pack
+  call dein#add('neomake/neomake') " Async linting and Makefile integration
+  call dein#add('mileszs/ack.vim') " Faster grep
+  call dein#add('scrooloose/nerdtree') " File tree
+  call dein#add('tpope/vim-commentary') " comment/uncomment blocks and lines
+  call dein#add('tpope/vim-fugitive') " git plugin
+  call dein#add('terryma/vim-multiple-cursors') " ...multiple cursors
+  call dein#add('ntpeters/vim-better-whitespace') " highlight and remove trailing whitespace
+  call dein#add('sakhnik/nvim-gdb', {'build': './install.sh'}) " gdb and lldb plugin
+  call dein#add('kshenoy/vim-signature') " Show marks
+  call dein#add('octol/vim-cpp-enhanced-highlight') " better C++ syntax highlighting
+  call dein#add('iamcco/markdown-preview.nvim', { 'on_ft': ['markdown', 'pandoc.markdown', 'rmd'], 'build': 'cd app & yarn install'  }) " Markdown preview when writing documentation
+  " call dein#add('Shougo/neoinclude.vim')
+  call dein#add('dylanaraps/wal.vim') " Integration to system theme via wal
+  call dein#add('xuhdev/vim-latex-live-preview') " Preview Latex documents while writing them
   " Required:
   call dein#end()
   call dein#save_state()
@@ -74,24 +68,62 @@ if dein#check_install()
 endif
 
 "End dein Scripts-------------------------
-source ~/.vimrc
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set expandtab
+set tabstop=4
+set shiftwidth=4
+syntax on
+set number
+filetype plugin indent on
+" NERDTrees File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+ exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+ exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('h', 'green', 'none', 'green', '#000040')
+call NERDTreeHighlightFile('md', 'green', 'none', '#3366FF', '#000040')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#000040')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#000040')
+call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#000040')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#000040')
+call NERDTreeHighlightFile('html', 'yellow', 'none', '#73dd27', '#000040')
+call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#000040')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#000040')
+call NERDTreeHighlightFile('js', 'Red', 'none', 'yellow', '#000040')
+call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#000040')
+call NERDTreeHighlightFile('Python', 'blue', 'none', '#3366FF', '#000040')
+call NERDTreeHighlightFile('sh', 'yellow', 'NONE', 'red', '#000040')
+call NERDTreeHighlightFile('py', 'blue', 'none', '#ffa500', '#000040')
+call NERDTreeHighlightFile('pyc', 'blue', 'none', '#ffa500', '#000040')
+call NERDTreeHighlightFile('txt', 'Red', 'none', '#fc16ca', '#000040')
+call NERDTreeHighlightFile('lock', 'Red', 'none', 'red', '#000040')
+call NERDTreeHighlightFile('cpp', 'lightblue', 'none', 'blue', '#000040')
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+:let mapleader = "\\"
+:inoremap jj <ESC>
+:nnoremap <Leader>ev :vsplit $MYVIMRC<cr>
+:nnoremap <leader>sv :source $MYVIMRC<cr>
+"Double {{ will open braces for a function
+:inoremap {{ {<ESC>o}<ESC>O
+"Easier window management
+:noremap <C-h> <C-w><c-h>
+:noremap <C-j> <C-w><c-j>
+:noremap <C-k> <C-w><c-k>
+:noremap <C-l> <C-w><c-l>
+:noremap gm `
+:vnoremap <Space> <ESC>
+let g:ackhighlight=1
+highlight ColorColumn ctermbg=darkred
+let g:airline#extensions#tmuxline#enabled = 0
+
+set clipboard^=unnamed
 set clipboard+=unnamedplus
 let g:airline_theme='iceberg'
-" let g:deoplete#enable_at_startup=1
-" let g:deoplete#sources#clang#libclang_path='/usr/local/Cellar/llvm/7.0.0/lib/libclang.dylib'
-"  let g:deoplete#sources#clang#clang_header='/usr/local/opt/llvm/include/'
- " Change clang binary path
- " call deoplete#custom#var('clangx', 'clang_binary', '/usr/bin/clang')
- " call deoplete#custom#option('auto_complete_delay', 200)
 set completeopt=menu
-" TAB through autocomplete suggestions
-" inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" :
-" \ <SID>check_back_space() ? "\<TAB>" :
-" \ deoplete#mappings#manual_complete()
-" function! s:check_back_space() abort "{{{
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~ '\s'
-" endfunction"}}}
+
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -103,27 +135,24 @@ inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-" " use tab and shift tab to cycle through completion otions
+" use tab and shift tab to cycle through completion otions
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " autoclose window if done
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 call neomake#configure#automake('nrwi', 200)
+
+" Terminal escape is also jj
 tnoremap jj <C-\><C-n>
-let g:ycm_disable_for_files_larger_than_kb = 1
+
 let g:multi_cursor_quit_key = '<ESC>'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-nnoremap <leader>S :ToggleWorkspace<CR>
-" Set column width and color
-" set colorcolumn=80
-" highlight ColorColumn ctermbg=darkred
+
 set nohlsearch
-let g:neomake_cpp_clang_args = neomake#makers#ft#cpp#clang().args + ['-I..']
-nnoremap <leader>w :ToggleWorkspace<CR>
+
 nnoremap <leader>m :Neomake<CR>
-colorscheme wal "0x7A69_dark was my old one. Use Wal themes instead
 colorscheme 256-grayvim
 autocmd TermOpen * DisableWhitespace
-au BufRead,BufNewFile *.cuh set filetype=cpp
+au BufRead,BufNewFile *.cuh set filetype=cpp " proper cuda syntax highlighting

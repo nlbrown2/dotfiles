@@ -1,7 +1,3 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
 # Read `man 5 sway` for a complete reference.
 
 ### Variables
@@ -14,7 +10,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term alacritty
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 set $menu rofi -show combi -font "Monospace 16" -lines 10 -combi-modi "window#drun#ssh#run"
@@ -25,6 +21,7 @@ gaps outer -2
 smart_gaps on
 
 # Pywal inclusion
+# Sets background, foreground, wallapaper, colorN variables
 include "$HOME/.cache/wal/colors-sway"
 ### Output configuration
 #
@@ -38,50 +35,31 @@ client.urgent           $background     $background     $foreground  $background
 client.placeholder      $background     $background     $foreground  $background       $background
 
 client.background       $background
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
 
-### Idle configuration
+# Timeout autolock and turn screen off
 #
-# Example configuration:
-#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
          timeout 300 '/home/nathan/.config/swaylock/lock.sh' \
          timeout 600 'swaymsg "output * dpms off"' \
               resume 'swaymsg "output * dpms on"' \
          before-sleep '/home/nathan/.config/swaylock/lock.sh'
+
+# Allow firefox to prevent sleeping when fullscreen (such as when watching netflix)
 for_window [app_id="firefox"] inhibit_idle fullscreen
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
 
-### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-
+# Use natural scroll on touchpads
 input type:touchpad natural_scroll enabled
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
+
 
 ### Key bindings
 #
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec KITTY_ENABLE_WAYLAND=1 $term
+    bindsym $mod+Return exec $term
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -100,7 +78,8 @@ input type:touchpad natural_scroll enabled
     bindsym $mod+Shift+c reload
 
     # Trigger powerdown menu
-    bindsym $mod+Shift+p exec ~/.config/i3blocks/shutdown_menu
+    # This has been lost to git...whoops
+    # bindsym $mod+Shift+p exec ~/.config/i3blocks/shutdown_menu
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
@@ -132,8 +111,9 @@ input type:touchpad natural_scroll enabled
 # brightness up
 bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
-bindsym XF86KbdBrightnessUp exec --no-startup-id "~/.config/i3/keyboard_backlight.sh up"
-bindsym XF86KbdBrightnessDown exec --no-startup-id "~/.config/i3/keyboard_backlight.sh down"
+# Likewise lost to git. Probably won't need it on this branch, though
+#bindsym XF86KbdBrightnessUp exec --no-startup-id "~/.config/i3/keyboard_backlight.sh up"
+#bindsym XF86KbdBrightnessDown exec --no-startup-id "~/.config/i3/keyboard_backlight.sh down"
 
 # Audio controls
 # Audio Function keys don't work, but thats ok for now
@@ -189,7 +169,7 @@ bindsym $mod+F6 exec playerctl previous
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
     bindsym $mod+t layout tabbed
-    bindsym $mod+i layout toggle split
+    bindsym $mod+i layout toggle split # i for "initial"
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -249,7 +229,8 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command i3blocks
+    # i3blocks is lost to git. Time for swaybar anyways
+    #status_command i3blocks
 
     colors {
         statusline #ffffff
