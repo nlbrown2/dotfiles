@@ -13,7 +13,7 @@ set $right l
 set $term alacritty
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
-set $menu rofi -show combi -font "Monospace 16" -lines 10 -combi-modi "window#drun#ssh#run"
+set $menu j4-dmenu-desktop --dmenu='bemenu --list 10'
 
 font pango:DejaVu Sans Mono, Awesome 16
 gaps inner 10
