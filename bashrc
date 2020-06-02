@@ -8,9 +8,12 @@ fi
 #PS1='\[\033[0;36m\]\w\[\033[0;32m\]$(__git_ps1)\$ \[\033[0m\]'
 [ -f  ~/.git-prompt.sh ] && source ~/.git-prompt.sh
 OLD_PS1=$PS1
-PS1="\[\033[01;31m\]\w\[\033[01;36m\]"
-command -v __git_ps1 && PS1="$PS1$(__git_ps1)"
-PS1="$PS1\[\033[01;31m\]\\$ \[\033[00m\]"
+PS1='\[\033[01;31m\]\w' # coloful working directory
+if type "__git_ps1" &> /dev/null; then
+    gitPs1='\[\033[01;36m\]$(__git_ps1)\[\033[01;31m\]'
+fi
+partTwo='\\$ \[\033[00m\]' #really just $ and resetting text to white
+PS1="$PS1$gitPs1$partTwo"
 #PS1='\[\033[01;31m\]\w\[\033[01;36m\]$(__git_ps1)\[\033[01;31m\]\\$ \[\033[00m\]'
 
 # git autocomplete
@@ -20,7 +23,7 @@ PS1="$PS1\[\033[01;31m\]\\$ \[\033[00m\]"
 unset VIRTUAL_ENV
 
 # useful substitutes
-alias preview="fzf --preview 'bat --color \"always\" {}'"
+command -v fzf && alias preview="fzf --preview 'bat --color \"always\" {}'"
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim {})+abort'"
 
 export PATH="/home/nathan/.cargo/bin:$PATH"
@@ -36,12 +39,12 @@ command -v thefuck && eval $(thefuck --alias)
 command -v fuck && alias f="fuck"
 
 # vim w/ sessions
-alias vims="vim -S Session.vim"
+alias nvims="nvim -S Session.vim"
 
 # functions to sftp sync between local and CAEN using rsync
 function downsync() {
   PWD=$(pwd)
-  STEM="/Users/nlbrown222/Documents/"
+  STEM="/home/nathan/Documents/"
   REMOTE_DIR="${PWD//${STEM}/""}"
   echo $REMOTE_DIR
   echo "rsync -avzuP --exclude=".git/" sftpcaen:$REMOTE_DIR/ $PWD"
@@ -50,7 +53,7 @@ function downsync() {
 
 function upsync() {
   PWD=$(pwd)
-  STEM="/Users/nlbrown222/Documents/"
+  STEM="/home/nathan/Documents/"
   REMOTE_DIR="${PWD//${STEM}/""}"
   echo $REMOTE_DIR
   echo "rsync -avzuP --exclude=".git/" $PWD/ sftpcaen:$REMOTE_DIR"
@@ -83,3 +86,6 @@ export PATH="$PATH:/home/nathan/.local/bin"
 export EDITOR="nvim"
 
 [ -f ~/.local/bin/init_directory ] && source ~/.local/bin/init_directory
+
+# Run firefox in sandbox. See: https://wiki.gentoo.org/wiki/Simple_sandbox
+command -v /usr/bin/firefox && alias firefox='sudo -u ff firefox' && xhost si:localuser:ff
