@@ -10,3 +10,6 @@
 [submodule "swaylock-effects"]
 	path = swaylock-effects
 	url = git@github.com:mortie/swaylock-effects.git
+[submodule "gentoo-grub-themes"]
+	path = gentoo-grub-themes
+	url = git@github.com:Telemin/gentoo-grub-themes.git
