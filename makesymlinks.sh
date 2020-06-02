@@ -27,3 +27,5 @@ for file in $files; do
 	        echo "Creating symlink to $file in home directory."
 	            ln -s $dir/$file ~/.$file
 	    done
+
+sudo ln -s $dir/custom-firefox.desktop /usr/share/applications/custom-firefox.desktop

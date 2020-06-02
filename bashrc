@@ -88,4 +88,4 @@ export EDITOR="nvim"
 [ -f ~/.local/bin/init_directory ] && source ~/.local/bin/init_directory
 
 # Run firefox in sandbox. See: https://wiki.gentoo.org/wiki/Simple_sandbox
-command -v /usr/bin/firefox && alias firefox='sudo -u ff firefox' && xhost si:localuser:ff
+alias firefox='sudo -u ff firefox' && xhost si:localuser:ff

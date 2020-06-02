@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=Firefox on Wayland
+GenericName=Web Browser
+Comment=Browse the Web
+Icon=firefox
+Exec=sudo -u ff firefox-wayland --name firefox-wayland %u
+Terminal=false
+Type=Application
+MimeType=application/pdf;application/vnd.mozilla.xul+xml;application/xhtml+xml;text/html;text/mml;text/xml;x-scheme-handler/ftp;x-scheme-handler/http;x-scheme-handler/https;
+StartupNotify=false
+Categories=Network;WebBrowser;
+Keywords=web;browser;internet;
+Actions=new-window;new-private-window;
