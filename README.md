@@ -1,1 +1,1 @@
-After cloning, run the generate symlinks bash script to set up symlinks for all configuration files. Then, run `brew install reattach-to-user-namespace` to get the ability to paste into vim through tmux.
+After cloning, run `makesymlinks.sh` to symlink all of the items in this directory to $HOME. If any files will be overwritten, they will be placed in $HOME/dotfiles_old JIK you need them.

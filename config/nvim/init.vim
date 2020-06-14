@@ -19,23 +19,8 @@ if dein#load_state('/Users/nlbrown222/.cache/dein')
   call dein#add('/Users/nlbrown222/.config/nvim/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
-  "call dein#add('Shougo/neosnippet.vim')
-   if has('nvim')
-      " nvim doesn't support powerline yet: https://github.com/powerline/powerline/issues/1287
-      call dein#add('vim-airline/vim-airline')
-      call dein#add('vim-airline/vim-airline-themes')
-    else
-      call dein#add('powerline/powerline')
-    endif "call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('neoclide/coc.nvim', { 'build': 'yarn install --frozen-lockfile' })
-  " call dein#add('Shougo/deoplete.nvim')
-  " Change clang options
-  " call deoplete#custom#var('clangx', 'default_c_options', '')
-  " call deoplete#custom#var('clangx', 'default_cpp_options', '')
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
   call dein#add('neomake/neomake')
   call dein#add('mileszs/ack.vim')
   call dein#add('scrooloose/nerdtree')
@@ -47,7 +32,8 @@ if dein#load_state('/Users/nlbrown222/.cache/dein')
   call dein#add('kshenoy/vim-signature')
   call dein#add('cocopon/iceberg.vim')
   call dein#add('octol/vim-cpp-enhanced-highlight')
-  call dein#add('iamcco/markdown-preview.nvim', { 'build': 'cd app & yarn install'  })
+call dein#add('iamcco/markdown-preview.nvim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd'],
+					\ 'build': 'cd app & yarn install' })
   call dein#add('thaerkh/vim-workspace')
   call dein#add('tpope/vim-eunuch')
   " call dein#add('arithran/vim-delete-hidden-buffers')
@@ -69,7 +55,6 @@ endif
 
 "End dein Scripts-------------------------
 source ~/.vimrc
-colorscheme Tomorrow-Night-Eighties
 set clipboard+=unnamedplus
 let g:airline_theme='iceberg'
 " let g:deoplete#enable_at_startup=1
