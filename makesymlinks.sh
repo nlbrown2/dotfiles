@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bash_profile profile tmux.conf bashrc config/nvim git-completion.bash git-prompt.sh config/rofi config/kitty  config/sway config/swaylock config/kanshi config/mako local/bin cache/wal alacritty.yml"
+files="bash_profile profile tmux.conf bashrc config/nvim git-completion.bash git-prompt.sh config/rofi config/kitty  config/sway config/swaylock config/kanshi config/mako local/bin cache/wal alacritty.yml config/waybar"
 
 
 ############################
@@ -22,10 +22,10 @@ cd $dir
 echo "..done"
 #move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
-	echo "Moving any existing dotfiles from ~ to $olddir"
+	echo "mv ~/.$file ~/dotfiles_old/"
 	    mv ~/.$file ~/dotfiles_old/
-	        echo "Creating symlink to $file in home directory."
+	        echo "ln -s $dir/$file ~/.$file"
 	            ln -s $dir/$file ~/.$file
 	    done
 
-sudo ln -s $dir/custom-firefox.desktop /usr/share/applications/custom-firefox.desktop
+[ ! -f /usr/share/applications/custom-firefox.desktop ] && sudo ln -s $dir/custom-firefox.desktop /usr/share/applications/custom-firefox.desktop

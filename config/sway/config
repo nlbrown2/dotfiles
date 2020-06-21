@@ -227,24 +227,10 @@ bindsym $mod+r mode "resize"
 bar {
     swaybar_command waybar
 }
-#bar {
-#    position top
-
-#    # When the status_command prints a new line to stdout, swaybar updates.
-#    # The default just shows the current date and time.
-#    # i3blocks is lost to git. Time for swaybar anyways
-#    #status_command i3blocks
-
-#    colors {
-#        statusline #ffffff
-#        background $background
-#        inactive_workspace #32323200 #32323200 #5c5c5c
-#    }
-#    font pango:DejaVu Sans Mono, Font Awesome 5 Free 16
-#}
 
 exec mako
 exec_always run_kanshi.sh
 exec redshift
+exec pulseaudio --start
 
 include /etc/sway/config.d/*
