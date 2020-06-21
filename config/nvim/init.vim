@@ -13,49 +13,32 @@ set runtimepath+=/home/nathan/.cache/nvim/./repos/github.com/Shougo/dein.vim
 
 " Required:
 if dein#load_state('/home/nathan/.cache/nvim/.')
-  call dein#begin('/home/nathan/.cache/nvim/.')
+    call dein#begin('/home/nathan/.cache/nvim/.')
 
-  " Let dein manage dein
-  " Required:
-  call dein#add('/home/nathan/.cache/nvim/./repos/github.com/Shougo/dein.vim')
-
-
-  " Add or remove your plugins here like this:
-  "call dein#add('Shougo/neosnippet.vim')
-   if has('nvim')
-      " nvim doesn't support powerline yet: https://github.com/powerline/powerline/issues/1287
-      call dein#add('vim-airline/vim-airline') " better status bar
-      call dein#add('vim-airline/vim-airline-themes')
-    else
-      call dein#add('powerline/powerline')
-    endif "call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('neoclide/coc.nvim', { 'build': 'yarn install --frozen-lockfile' })
-  " call dein#add('Shougo/deoplete.nvim')
-  " Change clang options
-  " call deoplete#custom#var('clangx', 'default_c_options', '')
-  " call deoplete#custom#var('clangx', 'default_cpp_options', '')
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
-  call dein#add('flazz/vim-colorschemes') " colorscheme pack
-  call dein#add('neomake/neomake') " Async linting and Makefile integration
-  call dein#add('mileszs/ack.vim') " Faster grep
-  call dein#add('scrooloose/nerdtree') " File tree
-  call dein#add('tpope/vim-commentary') " comment/uncomment blocks and lines
-  call dein#add('tpope/vim-fugitive') " git plugin
-  call dein#add('terryma/vim-multiple-cursors') " ...multiple cursors
-  call dein#add('ntpeters/vim-better-whitespace') " highlight and remove trailing whitespace
-  call dein#add('sakhnik/nvim-gdb', {'build': './install.sh'}) " gdb and lldb plugin
-  call dein#add('kshenoy/vim-signature') " Show marks
-  call dein#add('octol/vim-cpp-enhanced-highlight') " better C++ syntax highlighting
-  call dein#add('iamcco/markdown-preview.nvim', { 'on_ft': ['markdown', 'pandoc.markdown', 'rmd'], 'build': 'cd app & yarn install'  }) " Markdown preview when writing documentation
-  " call dein#add('Shougo/neoinclude.vim')
-  call dein#add('dylanaraps/wal.vim') " Integration to system theme via wal
-  call dein#add('xuhdev/vim-latex-live-preview') " Preview Latex documents while writing them
-  " Required:
-  call dein#end()
-  call dein#save_state()
+    " Let dein manage dein
+    " Required:
+    call dein#add('/home/nathan/.cache/nvim/./repos/github.com/Shougo/dein.vim')
+    call dein#add('neovim/nvim-lsp') " integrated LSP client
+    call dein#add('ervandew/supertab') " Better autocomplete with LSP client
+    call dein#add('Chiel92/vim-autoformat') " Format on save
+    call dein#add('flazz/vim-colorschemes') " colorscheme pack
+    call dein#add('neomake/neomake') " Async linting and Makefile integration
+    call dein#add('mileszs/ack.vim') " Faster grep
+    call dein#add('scrooloose/nerdtree') " File tree
+    call dein#add('tpope/vim-commentary') " comment/uncomment blocks and lines
+    call dein#add('tpope/vim-fugitive') " git plugin
+    call dein#add('terryma/vim-multiple-cursors') " ...multiple cursors
+    call dein#add('ntpeters/vim-better-whitespace') " highlight and remove trailing whitespace
+    call dein#add('sakhnik/nvim-gdb', {'build': './install.sh'}) " gdb and lldb plugin
+    call dein#add('kshenoy/vim-signature') " Show marks
+    call dein#add('octol/vim-cpp-enhanced-highlight') " better C++ syntax highlighting
+    call dein#add('iamcco/markdown-preview.nvim', { 'on_ft': ['markdown', 'pandoc.markdown', 'rmd'], 'build': 'cd app & yarn install'  }) " Markdown preview when writing documentation
+    " call dein#add('Shougo/neoinclude.vim')
+    call dein#add('dylanaraps/wal.vim') " Integration to system theme via wal
+    call dein#add('xuhdev/vim-latex-live-preview') " Preview Latex documents while writing them
+    " Required:
+    call dein#end()
+    call dein#save_state()
 endif
 
 " Required:
@@ -117,29 +100,10 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 :vnoremap <Space> <ESC>
 let g:ackhighlight=1
 highlight ColorColumn ctermbg=darkred
-let g:airline#extensions#tmuxline#enabled = 0
 
 set clipboard^=unnamed
 set clipboard+=unnamedplus
-let g:airline_theme='iceberg'
 set completeopt=menu
-
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-" coc tab for completion
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-" use tab and shift tab to cycle through completion otions
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" autoclose window if done
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 call neomake#configure#automake('nrwi', 200)
 
@@ -147,8 +111,6 @@ call neomake#configure#automake('nrwi', 200)
 tnoremap jj <C-\><C-n>
 
 let g:multi_cursor_quit_key = '<ESC>'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
 
 set nohlsearch
 
@@ -156,3 +118,11 @@ nnoremap <leader>m :Neomake<CR>
 colorscheme 256-grayvim
 autocmd TermOpen * DisableWhitespace
 au BufRead,BufNewFile *.cuh set filetype=cpp " proper cuda syntax highlighting
+let g:airline_powerline_fonts=1
+
+lua require'nvim_lsp'.rust_analyzer.setup{}
+autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
+autocmd BufWrite * :Autoformat
+nnoremap <leader>c :!cargo clippy
+
+let g:SuperTabDefaultCompletionType = "<c-n>"
