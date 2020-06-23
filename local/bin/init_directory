@@ -1,0 +1,31 @@
+if [ -z $TMUX ]; then
+    echo "Working on:
+    [1] Robots
+    [2] Research
+    [3] i3 Config
+    [4] i3blocks Config
+    [5] EECS 482
+    "
+    read ANSWER
+
+    case $ANSWER in
+        1)
+        cd $HOME/Documents/eecs467/ros_tutorials
+        ;;
+        2)
+        cd $HOME/Documents/research
+        ;;
+        3)
+        cd $HOME/dotfiles/config/i3
+        ;;
+        4)
+        cd $HOME/dotfiles/config/i3blocks
+        ;;
+        5)
+        cd $HOME/Documents/eecs482IA/p4
+        ;;
+        *)
+        echo "I don't understand $ANSWER. Sorry!"
+        ;;
+    esac
+fi
