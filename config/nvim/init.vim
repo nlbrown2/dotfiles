@@ -33,6 +33,8 @@ if dein#load_state('/home/nathan/.cache/nvim/.')
     call dein#add('kshenoy/vim-signature') " Show marks
     call dein#add('octol/vim-cpp-enhanced-highlight') " better C++ syntax highlighting
     call dein#add('iamcco/markdown-preview.nvim', { 'on_ft': ['markdown', 'pandoc.markdown', 'rmd'], 'build': 'cd app & yarn install'  }) " Markdown preview when writing documentation
+    call dein#add('Shougo/deoplete.nvim')
+    call dein#add('Shougo/deoplete-lsp')
     " call dein#add('Shougo/neoinclude.vim')
     call dein#add('dylanaraps/wal.vim') " Integration to system theme via wal
     call dein#add('xuhdev/vim-latex-live-preview') " Preview Latex documents while writing them
@@ -126,3 +128,4 @@ autocmd BufWrite * :Autoformat
 nnoremap <leader>c :!cargo clippy
 
 let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:deoplete#enable_at_startup = 1
