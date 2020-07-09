@@ -3,3 +3,5 @@ tokenrc
 config/nvim/venv
 config/nvim/node_modules
 config/nvim/.cache
+cache/wal/schemes
+local/bin/wal
