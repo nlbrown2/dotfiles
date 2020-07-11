@@ -77,7 +77,7 @@ function resetmouse() {
 
 
 # Load colorscheme from wal/pywal. Can't use bat
-[ -f ~/.cache/wal/sequences ] && (/bin/cat ~/.cache/wal/sequences &)
+#[ -f ~/.cache/wal/sequences ] && (/bin/cat ~/.cache/wal/sequences &)
 
 alias sourcerc="source ~/.bashrc"
 
