@@ -2,6 +2,7 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 let g:python3_host_prog = '/home/nathan/.config/nvim/venv/bin/python'
 let g:dein#install_process_timeout = 5000
+set termguicolors
 
 "dein Scripts-----------------------------
 if &compatible
@@ -38,6 +39,7 @@ if dein#load_state('/home/nathan/.cache/nvim/.')
     " call dein#add('Shougo/neoinclude.vim')
     call dein#add('dylanaraps/wal.vim') " Integration to system theme via wal
     call dein#add('xuhdev/vim-latex-live-preview') " Preview Latex documents while writing them
+    call dein#add('morhetz/gruvbox')
     " Required:
     call dein#end()
     call dein#save_state()
@@ -117,7 +119,7 @@ let g:multi_cursor_quit_key = '<ESC>'
 set nohlsearch
 
 nnoremap <leader>m :Neomake<CR>
-colorscheme 256-grayvim
+colorscheme gruvbox
 autocmd TermOpen * DisableWhitespace
 au BufRead,BufNewFile *.cuh set filetype=cpp " proper cuda syntax highlighting
 let g:airline_powerline_fonts=1
@@ -129,3 +131,6 @@ nnoremap <leader>c :!cargo clippy
 
 let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:deoplete#enable_at_startup = 1
+let g:gruvbox_italic=1
+let g:gruvbox_italicize_strings=1
+set background=light
