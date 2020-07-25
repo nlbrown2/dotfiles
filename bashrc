@@ -55,3 +55,4 @@ function upsync() {
 
 # get me tokens
 source ~/.tokenrc
+source /Users/nlbrown222/dotfiles/alacritty/extra/completions/alacritty.bash
