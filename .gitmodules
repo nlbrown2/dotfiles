@@ -1,3 +1,6 @@
 [submodule "config/nvim/repos/github.com/Shougo/dein.vim"]
 	path = config/nvim/repos/github.com/Shougo/dein.vim
 	url = git@github.com:Shougo/dein.vim.git
+[submodule "alacritty"]
+	path = alacritty
+	url = https://github.com/alacritty/alacritty.git
