@@ -32,8 +32,8 @@ if dein#load_state('/Users/nlbrown222/.cache/dein')
   call dein#add('kshenoy/vim-signature')
   call dein#add('cocopon/iceberg.vim')
   call dein#add('octol/vim-cpp-enhanced-highlight')
-call dein#add('iamcco/markdown-preview.nvim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd'],
-					\ 'build': 'cd app & yarn install' })
+  call dein#add('iamcco/markdown-preview.nvim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd'],
+                      \ 'build': 'sh -c "cd app & yarn install"' })
   call dein#add('thaerkh/vim-workspace')
   call dein#add('tpope/vim-eunuch')
   " call dein#add('arithran/vim-delete-hidden-buffers')
