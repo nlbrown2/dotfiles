@@ -6,6 +6,6 @@
 	url = https://github.com/alacritty/alacritty.git
 [submodule "widgets/commands-feed.widget"]
 	path = widgets/commands-feed.widget
-	url = https://github.com/smartameer/commands-feed.widget.git
+	url = git@github.com:nlbrown2/commands-feed.widget.git
 [submodule "widgets/commands-feed.widget/"]
 	url = git@github.com:nlbrown2/commands-feed.widget.git
