@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directorykkk
-files="bash_profile gvimrc vimrc profile tmux.conf bashrc config/nvim config/powerline yabairc skhdrc"
+files="bash_profile gvimrc vimrc profile tmux.conf bashrc config/nvim config/powerline yabairc skhdrc alacritty.yml"
 
 
 ############################
@@ -20,7 +20,7 @@ echo "...done"
 echo "Changing to the $dir directory"
 cd $dir
 echo "..done"
-#move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
+#move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
 	echo "Moving any existing dotfiles from ~ to $olddir"
 	    mv ~/.$file ~/dotfiles_old/
