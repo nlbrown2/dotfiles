@@ -27,7 +27,10 @@ include "$HOME/.cache/wal/colors-sway"
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/nathan/dotfiles/wallpapers/nathan-dumlao-ciO5L8pin8A-unsplash.jpg fill
+#output * bg /home/nathan/dotfiles/wallpapers/nathan-dumlao-ciO5L8pin8A-unsplash.jpg fill
+
+include "#HOME/.config/sway/darkmode"
+output * bg $wallpaper fill
 # class                 border             backgr.         text       indicator        child_border
 client.focused          $color0          $color8           000000
 client.focused_inactive $background     $background     $foreground  $background       $background

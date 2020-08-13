@@ -1,6 +1,10 @@
 if [ "$(tty)" = "/dev/tty1" ]; then
     exec sway
 fi
+
+function command_exists() {
+    command -v $1 > /dev/null;
+}
 # fzf autocomplete
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -23,41 +27,41 @@ PS1="$PS1$gitPs1$partTwo"
 unset VIRTUAL_ENV
 
 # useful substitutes
-command -v fzf && alias preview="fzf --preview 'bat --color \"always\" {}'"
+command_exists fzf && alias preview="fzf --preview 'bat --color \"always\" {}'"
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim {})+abort'"
 
 export PATH="/home/nathan/.cargo/bin:$PATH"
 # better ls
-command -v exa && alias ls="exa"
+command_exists exa && alias ls="exa"
 
 # better cat
-command -v bat && alias cat="bat"
+command_exists bat && alias cat="bat"
 export BAT_THEME="DarkNeon"
 
 # support for f for typos
-command -v thefuck && eval $(thefuck --alias)
-command -v fuck && alias f="fuck"
+command_exists thefuck && eval $(thefuck --alias)
+command_exists fuck && alias f="fuck"
 
 # vim w/ sessions
 alias nvims="nvim -S Session.vim"
 
 # functions to sftp sync between local and CAEN using rsync
 function downsync() {
-  PWD=$(pwd)
-  STEM="/home/nathan/Documents/"
-  REMOTE_DIR="${PWD//${STEM}/""}"
-  echo $REMOTE_DIR
-  echo "rsync -avzuP --exclude=".git/" sftpcaen:$REMOTE_DIR/ $PWD"
-  rsync -avzuP --exclude=".git/" sftpcaen:$REMOTE_DIR/ $PWD
+    PWD=$(pwd)
+    STEM="/home/nathan/Documents/"
+    REMOTE_DIR="${PWD//${STEM}/""}"
+    echo $REMOTE_DIR
+    echo "rsync -avzuP --exclude=".git/" sftpcaen:$REMOTE_DIR/ $PWD"
+    rsync -avzuP --exclude=".git/" sftpcaen:$REMOTE_DIR/ $PWD
 }
 
 function upsync() {
-  PWD=$(pwd)
-  STEM="/home/nathan/Documents/"
-  REMOTE_DIR="${PWD//${STEM}/""}"
-  echo $REMOTE_DIR
-  echo "rsync -avzuP --exclude=".git/" $PWD/ sftpcaen:$REMOTE_DIR"
-  rsync -avzuP --exclude=".git/" $PWD/ sftpcaen:$REMOTE_DIR
+    PWD=$(pwd)
+    STEM="/home/nathan/Documents/"
+    REMOTE_DIR="${PWD//${STEM}/""}"
+    echo $REMOTE_DIR
+    echo "rsync -avzuP --exclude=".git/" $PWD/ sftpcaen:$REMOTE_DIR"
+    rsync -avzuP --exclude=".git/" $PWD/ sftpcaen:$REMOTE_DIR
 }
 
 function resetwifi() {

@@ -3,16 +3,16 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\wal]
 "Colour0"="223,227,233"  ; Default Foreground
 "Colour1"="223,227,233"  ; Default Bold Foreground
-"Colour2"="3,20,20"  ; Default Background
-"Colour3"="3,20,20"  ; Default Bold Background
-"Colour4"="3,20,20"  ; Cursor Text
+"Colour2"="7,31,30"  ; Default Background
+"Colour3"="7,31,30"  ; Default Bold Background
+"Colour4"="7,31,30"  ; Cursor Text
 "Colour5"="223,227,233"  ; Cursor Color
-"Colour6"="3,20,20"  ; ANSI Black
+"Colour6"="7,31,30"  ; ANSI Black
 "Colour7"="156,158,163"  ; ANSI Black Bold
-"Colour8"="125,170,193"  ; ANSI Red
-"Colour9"="125,170,193"  ; ANSI Red Bold
-"Colour10"="148,168,176"  ; ANSI Green
-"Colour11"="148,168,176"  ; ANSI Green Bold
+"Colour8"="147,168,176"  ; ANSI Red
+"Colour9"="147,168,176"  ; ANSI Red Bold
+"Colour10"="193,198,178"  ; ANSI Green
+"Colour11"="193,198,178"  ; ANSI Green Bold
 "Colour12"="151,183,202"  ; ANSI Yellow
 "Colour13"="151,183,202"  ; ANSI Yellow Bold
 "Colour14"="177,199,216"  ; ANSI Blue

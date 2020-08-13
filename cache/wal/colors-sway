@@ -1,19 +1,19 @@
-set $wallpaper /home/nathan/dotfiles/wallpapers/wallpaper_repo/mountainlake_reflection.jpg
+set $wallpaper /home/nathan/.wallpapers/wallpaper_repo/mountainlake_reflection.jpg
 
-set $background #031414
+set $background #071F1E
 set $foreground #dfe3e9
 
-set $color0 #031414
-set $color1 #7DAAC1
-set $color2 #94A8B0
+set $color0 #071F1E
+set $color1 #93A8B0
+set $color2 #C1C6B2
 set $color3 #97B7CA
 set $color4 #B1C7D8
 set $color5 #B9CEE0
 set $color6 #D0D6E1
 set $color7 #dfe3e9
 set $color8 #9c9ea3
-set $color9 #7DAAC1
-set $color10 #94A8B0
+set $color9 #93A8B0
+set $color10 #C1C6B2
 set $color11 #97B7CA
 set $color12 #B1C7D8
 set $color13 #B9CEE0

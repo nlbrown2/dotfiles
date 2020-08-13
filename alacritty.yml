@@ -352,7 +352,7 @@ tomorrow-night-bright: &dark2
     cyan:    '0x497e7a'
     white:   '0x9a9a9a'
 
-colors: *custom
+colors: *dark
 
 # Colors (Tomorrow Night Bright)
 #colors:

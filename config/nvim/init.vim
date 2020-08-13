@@ -133,4 +133,4 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:deoplete#enable_at_startup = 1
 let g:gruvbox_italic=1
 let g:gruvbox_italicize_strings=1
-set background=light
+set background=dark

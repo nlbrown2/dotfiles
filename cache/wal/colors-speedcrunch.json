@@ -5,11 +5,11 @@
     "result": "#B1C7D8",
     "comment": "#9c9ea3",
     "matched": "#B1C7D8",
-    "function": "#7DAAC1",
+    "function": "#93A8B0",
     "operator": "#97B7CA",
-    "variable": "#94A8B0",
+    "variable": "#C1C6B2",
     "scrollbar": "#97B7CA",
     "separator": "#97B7CA",
-    "background": "#031414",
-    "editorbackground": "#031414"
+    "background": "#071F1E",
+    "editorbackground": "#071F1E"
 }
