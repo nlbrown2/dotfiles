@@ -32,7 +32,7 @@ render: (output) -> """
   </tr>
   <tr>
     <td>Space focus: [recent, prev, next]</td>
-    <td>Shift + CMD + [xzc] </td>
+    <td>Shift + CMD + [asd] </td>
   </tr>
   <tr>
     <td>Fullscreen</td>
