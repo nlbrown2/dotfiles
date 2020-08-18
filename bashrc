@@ -53,6 +53,10 @@ function upsync() {
   rsync -avzuP --exclude=".git/" $PWD/ sftpcaen:$REMOTE_DIR
 }
 
+function md() {
+    pandoc $1 | lynx -stdin
+}
+
 # get me tokens
 source ~/.tokenrc
 source /Users/nlbrown222/dotfiles/alacritty/extra/completions/alacritty.bash
