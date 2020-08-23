@@ -39,6 +39,8 @@ if dein#load_state('/Users/nlbrown222/.cache/dein')
   " call dein#add('arithran/vim-delete-hidden-buffers')
   call dein#add('srishanbhattarai/neovim-spotify', { 'build': 'bash install.sh' })
   call dein#add('Shougo/neoinclude.vim')
+  call dein#add('rust-lang/rust.vim')
+  call dein#add('neoclide/coc.nvim', {'rev': 'release'})
   " Required:
   call dein#end()
   call dein#save_state()
@@ -105,3 +107,4 @@ nnoremap <leader>w :ToggleWorkspace<CR>
 nnoremap <leader>m :Neomake<CR>
 colorscheme Tomorrow-Night
 autocmd TermOpen * DisableWhitespace
+let g:autofmt_autosave=1
