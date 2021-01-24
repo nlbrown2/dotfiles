@@ -48,8 +48,8 @@ client.background       $background
 exec swayidle -w \
          timeout 300 '/home/nathan/.config/swaylock/lock.sh' \
          timeout 600 'swaymsg "output * dpms off"' \
-         resume 'swaymsg "output * dpms on"' \
-         before-sleep '/home/nathan/.config/swaylock/lock.sh'
+         resume 'swaymsg "output * dpms on"' 
+         # before-sleep '/home/nathan/.config/swaylock/lock.sh'
 
 # Allow firefox to prevent sleeping when fullscreen (such as when watching netflix)
          for_window [app_id="firefox"] inhibit_idle fullscreen
