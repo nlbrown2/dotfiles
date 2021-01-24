@@ -93,3 +93,11 @@ export EDITOR="nvim"
 
 # Run firefox in sandbox. See: https://wiki.gentoo.org/wiki/Simple_sandbox
 alias firefox='sudo -u ff firefox' && xhost si:localuser:ff
+    rm -f $HOME/.config/nvim/venv;
+if [[ $(awk -F= '/^NAME/{print $2}' /etc/os-release) == "Gentoo" ]]; then
+    #echo "Setting up Gentoo venv"
+    ln -s $HOME/.config/nvim/gentoo-venv $HOME/.config/nvim/venv;
+else
+    #echo "Setting up Ubuntu venv"
+    ln -s $HOME/.config/nvim/ubuntu-venv $HOME/.config/nvim/venv;
+fi

@@ -19,6 +19,6 @@
         output "Unknown VG27A L3LMQS052509" enable position 0,0
 }
 {
-    output "Unknown VG27A L3LMQS052522" enable position 0,0
-        output "Unknown VG27A L3LMQS052509" enable position 2560,0
+    output "Unknown VG27A L3LMQS052522" enable position 2560,0
+    output "Unknown VG27A L3LMQS052509" enable position 0,0
 }

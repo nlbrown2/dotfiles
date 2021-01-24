@@ -102,10 +102,11 @@ window:
 # pango:DejaVu Sans Mono, Awesome 16
 # Font configuration
 font:
-  family: DejaVuSansMono Nerd Font Mono
-  #family: Liberation Sans
-  style: Book
-  size: 14
+  normal:
+      family: DejaVuSansMono Nerd Font Mono
+      #family: Liberation Sans
+      style: Book
+      size: 14
 #font:
   # Normal (roman) font face
   #normal:
