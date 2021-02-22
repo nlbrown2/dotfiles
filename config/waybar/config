@@ -4,8 +4,8 @@
         "height": 30, // Waybar height (to be removed for auto height)
         // "width": 1280, // Waybar width
         // Choose the order of the modules
-        "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
-        "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "clock"],
+        "modules-left": ["sway/workspaces", "sway/mode", "custom/media", "idle_inhibitor"],
+        "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "clock", "custom/power"],
         // Modules configuration
         "sway/workspaces": {
             "disable-scroll": true,
@@ -23,13 +23,21 @@
         "sway/mode": {
             "format": "<span style=\"italic\">{}</span>"
         },
+        "idle_inhibitor": {
+            "format": "{icon}",
+            "format-icons": {
+                "deactivated": "",
+                "activated": ""
+            }
+        },
         "clock": {
             "format-alt": "{:%a, %b %e}",
-            "format": "{:%I:%M}"
+            "format": "{:%I:%M %p}"
         },
         "cpu": {
             "format": "{usage}% ",
-            "tooltip": false
+            "tooltip": false,
+            "on-click": "alacritty -e htop"
         },
         "memory": {
             "format": "{}% "
@@ -68,6 +76,11 @@
                 "default": ["", "", ""]
             },
             "on-click": "pavucontrol"
+        },
+        "custom/power": {
+            "format": "⏻",
+            "on-click": "$HOME/.config/waybar/lock-now.sh",
+            "tooltip": false
         },
         "custom/media": {
             "format": "{icon} {}",
