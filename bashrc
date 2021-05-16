@@ -60,3 +60,4 @@ function md() {
 # get me tokens
 source ~/.tokenrc
 source /Users/nlbrown222/dotfiles/alacritty/extra/completions/alacritty.bash
+fortune
