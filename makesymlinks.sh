@@ -28,4 +28,4 @@ for file in $files; do
 	            ln -s $dir/$file ~/.$file
 	    done
 
-[ ! -f /usr/share/applications/custom-firefox.desktop ] && sudo ln -s $dir/custom-firefox.desktop /usr/share/applications/custom-firefox.desktop
+[ ! -f /usr/share/applications/custom-firefox.desktop ] && sudo ln -s $dir/custom-firefox.desktop $HOME/.local/share/applications/firefox.desktop

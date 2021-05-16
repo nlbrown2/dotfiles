@@ -92,12 +92,13 @@ export EDITOR="nvim"
 [ -f ~/.local/bin/init_directory ] && source ~/.local/bin/init_directory
 
 # Run firefox in sandbox. See: https://wiki.gentoo.org/wiki/Simple_sandbox
-alias firefox='sudo -u ff firefox' && xhost si:localuser:ff
-    rm -f $HOME/.config/nvim/venv;
-if [[ $(awk -F= '/^NAME/{print $2}' /etc/os-release) == "Gentoo" ]]; then
-    #echo "Setting up Gentoo venv"
-    ln -s $HOME/.config/nvim/gentoo-venv $HOME/.config/nvim/venv;
-else
-    #echo "Setting up Ubuntu venv"
-    ln -s $HOME/.config/nvim/ubuntu-venv $HOME/.config/nvim/venv;
-fi
+# alias firefox='sudo -u ff firefox' && xhost si:localuser:ff
+# enable setting the window title to a command when you run it. Doesn't update when the command exits, yet
+# trap 'echo -ne "\033]2;$(history 1 | sed "s/^[ ]*[0-9]*[ ]*//g")\007"' DEBUG
+# myprompt() {
+#     OLD_PS1=$PS1
+#     echo -ne "\033]2; $(dirs +0) - $HOSTNAME\007"
+#     PS1=$OLD_PS1
+# }
+# PROMPT_COMMAND=myprompt
+# echo "here"

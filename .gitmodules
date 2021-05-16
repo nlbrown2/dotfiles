@@ -7,9 +7,9 @@
 [submodule "config/i3blocks-contrib"]
 	path = config/i3blocks-contrib
 	url = https://github.com/vivien/i3blocks-contrib.git
-[submodule "swaylock-effects"]
-	path = swaylock-effects
-	url = git@github.com:mortie/swaylock-effects.git
 [submodule "gentoo-grub-themes"]
 	path = gentoo-grub-themes
 	url = git@github.com:Telemin/gentoo-grub-themes.git
+[submodule "wlsunset"]
+	path = wlsunset
+	url = https://git.sr.ht/~kennylevinsen/wlsunset
