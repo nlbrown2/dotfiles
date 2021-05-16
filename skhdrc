@@ -1,7 +1,7 @@
 # Who23 Github, with minor tweaks (vim-style movements, etc)
 
 # open terminal, vsocde, and safari with shortcuts
-cmd - return : open -a Alacritty
+cmd - return : open -a iTerm
 alt - return : open -a Safari
 
 # focus window
