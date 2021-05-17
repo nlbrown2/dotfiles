@@ -9,3 +9,6 @@
 	url = git@github.com:nlbrown2/commands-feed.widget.git
 [submodule "widgets/commands-feed.widget/"]
 	url = git@github.com:nlbrown2/commands-feed.widget.git
+[submodule "widgets/simple-bar"]
+	path = widgets/simple-bar
+	url = https://github.com/Jean-Tinland/simple-bar
