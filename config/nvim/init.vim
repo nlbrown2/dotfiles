@@ -41,6 +41,8 @@ if dein#load_state('/Users/nlbrown222/.cache/dein')
   "call dein#add('Shougo/neoinclude.vim')
   call dein#add('rust-lang/rust.vim')
   call dein#add('neoclide/coc.nvim', {'rev': 'release'})
+  call dein#add('rafi/awesome-vim-colorschemes')
+
   " Required:
   call dein#end()
   call dein#save_state()
@@ -284,6 +286,6 @@ tnoremap jj <C-\><C-n>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 set nohlsearch
-colorscheme Tomorrow-Night
+colorscheme happy_hacking
 autocmd TermOpen * DisableWhitespace
 let g:autofmt_autosave=1
