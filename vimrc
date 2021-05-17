@@ -35,13 +35,13 @@ let g:jsx_ext_required = 0
 " set wildchar=<Tab> wildmenu wildmode=full
 let vim_markdown_preview_github=1
 set clipboard^=unnamed
-if !has('nvim')
-  " for powerline
-   set laststatus=2
-   python3 from powerline.vim import setup as powerline_setup
-   python3 powerline_setup()
-   python3 del powerline_setup
- endif
+" if !has('nvim')
+"   " for powerline
+"    set laststatus=2
+"    python3 from powerline.vim import setup as powerline_setup
+"    python3 powerline_setup()
+"    python3 del powerline_setup
+"  endif
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
